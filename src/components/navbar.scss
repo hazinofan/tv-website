@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+	background-color: #f2f5f7;
+}
+
+.horizontal-navbar {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-color: #05043e;
+	display: flex;
+	justify-content: center;
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	box-shadow: 0 5px 20px rgba(#05043e, .25);
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: auto;
+	z-index: 9999;
+	
+}
+
+li + li {
+	margin-left: 1.5rem;
+}
+
+a {
+	color: #FFF; 
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;  /* Reduced size */
+	height: 2.5rem;  /* Reduced size */
+	border-radius: 6px;
+	position: relative;
+
+	&:hover, &:focus, &.active {
+		background-color: #30305a;
+		outline: 0;
+		span { 
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+
+	span {
+		position: absolute;
+		background-color: #30305a;
+		white-space: nowrap;
+		padding: .3rem .75rem;
+		border-radius: 6px;
+		bottom: calc(100% + 0.5rem);
+		transform-origin: center bottom;
+		transform: scale(0);
+		opacity: 0;
+		transition: .15s ease;
+
+		&:before {
+			content: "";
+			display: block;
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			background-color: #30305a;
+			bottom: -5px;
+			left: 50%;
+			transform: translateX(-50%) rotate(45deg);
+			border-radius: 3px;
+		}
+	}
+}
+
+.icon_home {
+	font-size: 1.5rem;  /* Reduced icon size */
+}
+
+svg {
+	font-size: 1.25rem;  /* Apply to all icons */
+}

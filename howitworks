@@ -1,0 +1,39 @@
+<details>
+        <summary>
+          How it works
+          <IoIosHelpCircleOutline />
+        </summary>
+        <div>
+          <p>
+            Inside each <code>&lt;a&gt;</code> element there's a hidden (using transform and opacity){" "}
+            <code>&lt;span&gt;</code> containing the text. Like this:
+          </p>
+          <pre>
+            <code>
+              {`a span { 
+                position: absolute;
+                left: calc(100% + 1.5rem); // Moves it all the way to the right
+                opacity: 0;
+                transform: scale(0);
+                transform-origin: center left;
+                transition: .15s ease;
+              }`}
+            </code>
+          </pre>
+          <p>
+            On hover or focus, this span becomes visible through a transition of both transform and opacity. Like this:
+          </p>
+          <pre>
+            <code>
+              {`a:hover span, a:focus span { 
+                opacity: 1;
+                transform: scale(1);
+              }`}
+            </code>
+          </pre>
+          <p>
+            The <code>&lt;span&gt;</code> also has a pseudo-element in the shape of a rectangle, but rotated 45 degrees to make it
+            look like a triangle. See the code for more details.
+          </p>
+        </div>
+      </details>
