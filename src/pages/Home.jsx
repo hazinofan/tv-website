@@ -4,6 +4,10 @@ import { FaLaptop, FaShoppingCart } from 'react-icons/fa';
 import Caroussel from '../components/Caroussel';
 import Integration from '../components/Integration';
 import HeroSection from '../components/HeroSection';
+import CarousselMovies from '../components/CarousselMovies';
+import '../components/navbar.scss'
+import PricingCards from '../components/PricingCards';
+import EliteCard from '../components/EliteCard';
 
 export default function Home() {
   return (
@@ -39,6 +43,12 @@ export default function Home() {
     <Integration />
 
     <HeroSection />
+
+    <CarousselMovies />
+
+    <PricingCards />
+
+    <EliteCard />
     </>
   );
 }

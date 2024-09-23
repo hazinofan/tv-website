@@ -47,6 +47,69 @@ const Navbar = () => {
           </a>
         </li>
       </ul>
+      
+      <details>
+        <summary>
+          How it works
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="192"
+            height="192"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+          >
+            <rect width="256" height="256" fill="none"></rect>
+            <circle
+              cx="128"
+              cy="128"
+              r="96"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="16"
+            ></circle>
+            <circle cx="128" cy="180" r="12"></circle>
+            <path
+              d="M127.9995,144.0045v-8a28,28,0,1,0-28-28"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="16"
+            ></path>
+          </svg>
+        </summary>
+        <div>
+          <p>
+            The scaling effect you see when you open this <code>&lt;details&gt;</code>{' '}
+            element is created by using a keyframe animation.
+          </p>
+          <pre>
+            <code>
+              {`@keyframes scale {
+                0% {
+                  transform: scale(0);
+                }
+                100% {
+                  transform: scale(1);
+                }
+              }`}
+            </code>
+          </pre>
+          <p>This animation is added to the <code>&lt;div&gt;</code>, but only when the <code>[open]</code> attribute is toggled.</p>
+          <pre>
+            <code>
+              {`details[open] div {
+                animation: scale .15s ease;
+              }`}
+            </code>
+          </pre>
+          <p>Sadly there's no way (that I know of) to animate the <code>&lt;div&gt;</code> when the <code>&lt;details&gt;</code> is closing.</p>
+        </div>
+      </details>
+                
+
     </>
   );
 };

@@ -1,0 +1,255 @@
+
+
+.prices{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.prices p {
+    margin-bottom: 30px;
+    color: black;
+    font-size: 18px;
+}
+
+.prices h1{
+    font-size: 22px;
+    text-transform: uppercase;
+    color: rgb(208, 130, 208);
+}
+
+.prices-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+
+.prices-col img {
+    width: 70%; 
+    border-radius: 10px;
+}
+
+.prices-col h3 {
+    margin: 6px 95px 10px 0px;
+}
+
+.paragraphe {
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.paragraphe p {
+    margin-top: 20px;
+}
+
+.paragraphe a{
+    text-decoration: underline;
+    color: black;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+section.prices.prices_full {
+    width: 100%;
+    padding: 40px 10%;
+    margin-top: 50px;
+    background-size: cover;
+    background-position: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+
+@media(max-width: 700px) {
+    #accordion li label{
+        font-size: 15px;
+    }
+
+    #accordion li{
+    width: 100%;
+    }
+
+    .prices h1 {
+        font-size: 15px;
+    }
+    .icons {
+        flex-direction: column;
+    }
+    
+    .icons .fa-brands {
+        margin: 0 0 10px 0;
+    }
+    
+    .icons .fa-regular {
+        margin: 15px 0 0 0;
+    }
+    section.footer p {
+        padding: 0 20px;
+    }
+    #accordion {
+        width: initial;
+        margin-top: 40px;
+    }
+    .website_stats {
+        margin: 0;
+    }
+    .contact-col div h5 {
+        font-size: 15px;
+    }
+    
+    .type-details .category label {
+        margin-bottom: 10px;
+    }
+    
+
+}
+.type-details input {
+    display: none;
+}
+
+a.hero_btn.buy_sec {
+    color: gray;
+    border: 1px solid black;
+    padding: 15px 29px;
+    text-decoration: none;
+    display: inline;
+    background: transparent;
+    font-size: 15px;
+    position: relative;
+    cursor: pointer;
+    margin: 21px 19px 110px 19px;
+    transition: 0.3s;
+}
+
+a.hero_btn.buy_sec:hover {
+    border: 1px solid rgb(208, 130, 208);
+    background: rgb(208, 130, 208);
+    transition: 0.5s;
+    color: white;
+}
+
+/* From Uiverse.io by JaydipPrajapati1910 */ 
+.button {
+    --width: 100px;
+    --height: 35px;
+    --tooltip-height: 35px;
+    --tooltip-width: 90px;
+    --gap-between-tooltip-to-button: 18px;
+    --button-color: #6b1c8a;
+    --tooltip-color: #fff;
+    width: var(--width);
+    height: var(--height);
+    background: var(--button-color);
+    position: relative;
+    text-align: center;
+    border-radius: 0.45em;
+    font-family: "Arial";
+    transition: background 0.3s;
+  }
+  
+  .button::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: var(--tooltip-width);
+    height: var(--tooltip-height);
+    background-color: #555;
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: .25em;
+    line-height: var(--tooltip-height);
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+    left: calc(50% - var(--tooltip-width) / 2);
+  }
+  
+  .button::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #555;
+    left: calc(50% - 10px);
+    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+  }
+  
+  .button::after,.button::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+  
+  .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-wrapper,.text,.icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+  }
+  
+  .text {
+    top: 0
+  }
+  
+  .text,.icon {
+    transition: top 0.5s;
+  }
+  
+  .icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .button:hover {
+    background: #430e58;
+  }
+  
+  .button:hover .text {
+    top: -100%;
+  }
+  
+  .button:hover .icon {
+    top: 0;
+  }
+  
+  .button:hover:before,.button:hover:after {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .button:hover:after {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+  }
+  
+  .button:hover:before {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+  }
+  
+  .button {
+    margin-top: 38px;
+    width: 100%;
+    cursor: pointer
+}  

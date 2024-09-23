@@ -196,6 +196,9 @@ i.fa-solid {
   color: white;
   padding: 50px 0;
   text-align: left;
+  margin-top: 100px;
+  border-radius: 40px;
+  margin-bottom: 50px;
 }
 
 .hero-content {
@@ -226,7 +229,7 @@ i.fa-solid {
 }
 
 .discover-btn {
-  background-color: #e63946; /* Red color */
+  background-color: #570bb9; /* Red color */
   color: white;
   padding: 12px 24px;
   border-radius: 25px;
@@ -237,7 +240,7 @@ i.fa-solid {
 }
 
 .discover-btn:hover {
-  background-color: #d32f2f; /* Darker red on hover */
+  background-color: #33076d;
 }
 
 .hero-image img {
@@ -252,6 +255,8 @@ i.fa-solid {
   background-color: white;
   padding: 30px 0;
   margin-top: 30px;
+  margin: 30px 50px 0 50px;
+  border-radius: 50px;
 }
 
 .stat-item {
@@ -261,7 +266,7 @@ i.fa-solid {
 
 .stat-item h2 {
   font-size: 2.5rem;
-  color: #e63946; /* Red */
+  color: #570bb9; /* Red */
   font-weight: 700;
 }
 
@@ -294,3 +299,5 @@ i.fa-solid {
     margin-bottom: 20px;
   }
 }
+
+
