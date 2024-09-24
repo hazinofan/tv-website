@@ -5,6 +5,8 @@ import {
   Route,
 } from 'react-router-dom';
 import Home from "./pages/Home";
+import Products from "./pages/Products";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -14,7 +16,9 @@ function App() {
           <Navbar />
             <Routes>
               <Route path="/" element={<Home />}  />  
+              <Route path="/produits" element={<Products />}  />  
             </Routes>
+          <Footer />
       </Router>
     </div>
   );

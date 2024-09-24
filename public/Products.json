@@ -1,0 +1,76 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "1-MONTH PREMIUM SUBSCRIPTION",
+            "category": "PREMIUM",
+            "price": 25,
+            "price_before": 30,
+            "description": "Platinium-IPTV offers you access to the most advanced technology in the world for broadcasting channels. With years of expertise, our IPTV subscriptions are of exceptional quality. The 1-month premium subscription includes a variety of over 22,500 channels, including adult channels, and access to over 50,000 movies and series. Enjoy a seamless and stable experience, backed by regularly updated servers."
+        },
+        {
+            "id": 2,
+            "title": "3-MONTH PREMIUM SUBSCRIPTION",
+            "category": "PREMIUM",
+            "price": 35,
+            "price_before": 39,
+            "description": "Experience top-tier IPTV technology with Platinium-IPTV's 3-month premium subscription. This plan provides access to 22,500 channels, including exclusive adult content, and a vast collection of 50,000+ movies and series. Stay up-to-date with continuous server optimizations for smooth viewing."
+        },
+        {
+            "id": 3,
+            "title": "6-MONTH PREMIUM SUBSCRIPTION",
+            "category": "PREMIUM",
+            "price": 45,
+            "price_before": 52,
+            "description": "Platinium-IPTV's 6-month subscription brings a comprehensive selection of channels, including adult content, with over 22,500 channels and 50,000 movies and series. Enjoy an advanced and reliable streaming experience, with ongoing server improvements ensuring no disruptions."
+        },
+        {
+            "id": 4,
+            "title": "12-MONTH PREMIUM SUBSCRIPTION",
+            "category": "PREMIUM",
+            "price": 60,
+            "price_before": 70,
+            "description": "Commit to a year of high-quality IPTV with Platinium-IPTV's 12-month subscription. This premium plan provides over 22,500 channels and a vast library of movies and series. With constant updates, your viewing experience is guaranteed to be smooth and uninterrupted."
+        },
+        {
+            "id": 5,
+            "title": "1-MONTH STANDARD SUBSCRIPTION",
+            "category": "STANDARD",
+            "price": 20,
+            "price_before": 24,
+            "description": "The 1-month standard subscription from Platinium-IPTV offers a broad range of channels, with over 22,500 available. Enjoy access to an extensive library of 50,000+ movies and series, supported by our stable and efficient servers, updated regularly to ensure the best experience."
+        },
+        {
+            "id": 6,
+            "title": "3-MONTH STANDARD SUBSCRIPTION",
+            "category": "STANDARD",
+            "price": 28,
+            "price_before": 32,
+            "description": "Platinium-IPTV's 3-month standard subscription includes access to over 22,500 channels and an extensive library of movies and series. With regular updates, our servers provide a smooth, uninterrupted viewing experience."
+        },
+        {
+            "id": 7,
+            "title": "6-MONTH STANDARD SUBSCRIPTION",
+            "category": "STANDARD",
+            "price": 40,
+            "price_before": 45,
+            "description": "This 6-month standard subscription offers access to over 22,500 channels and more than 50,000 movies and series. Enjoy stable and reliable IPTV services with continuous server updates for a seamless experience."
+        },
+        {
+            "id": 8,
+            "title": "12-MONTH STANDARD SUBSCRIPTION",
+            "category": "STANDARD",
+            "price": 55,
+            "price_before": 60,
+            "description": "Platinium-IPTV\u2019s 12-month standard subscription includes access to over 22,500 channels and 50,000 movies and series. Servers are continuously updated, ensuring smooth and uninterrupted streaming for a full year."
+        },
+        {
+            "id": 9,
+            "title": "PLATINUM ELITE SUBSCRIPTION 15-MONTHS",
+            "category": "PREMIUM",
+            "price": 90,
+            "price_before": 120,
+            "description": "Upgrade to Platinium-IPTV's ultimate package: the 15-month Elite Platinum subscription. With access to over 25,000 channels and a library of more than 60,000 movies and series, this plan also includes personalized support. Enjoy top-tier servers that guarantee performance and reliability, with frequent updates ensuring a smooth, uninterrupted viewing experience."
+        }
+    ]
+}

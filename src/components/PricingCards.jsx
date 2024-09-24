@@ -60,7 +60,7 @@ export default function PricingCards() {
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
                                     <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
-                                    <ul role="list" className="mt-4 space-y-3">
+                                    <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+40100</strong> Movies & Series </li>
@@ -101,7 +101,7 @@ export default function PricingCards() {
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
                                     <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
-                                    <ul role="list" className="mt-4 space-y-3">
+                                    <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+40100</strong> Movies & Series </li>
@@ -144,7 +144,7 @@ export default function PricingCards() {
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
                                     <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
-                                    <ul role="list" className="mt-4 space-y-3">
+                                    <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+40100</strong> Movies & Series </li>
@@ -187,7 +187,7 @@ export default function PricingCards() {
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
                                     <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
-                                    <ul role="list" className="mt-4 space-y-3">
+                                    <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+40100</strong> Movies & Series </li>
@@ -233,7 +233,7 @@ export default function PricingCards() {
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
                                     <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
-                                    <ul role="list" className="mt-4 space-y-3">
+                                    <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+40100</strong> Movies & Series </li>
@@ -274,7 +274,7 @@ export default function PricingCards() {
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
                                     <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
-                                    <ul role="list" className="mt-4 space-y-3">
+                                    <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+40100</strong> Movies & Series </li>
@@ -317,7 +317,7 @@ export default function PricingCards() {
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
                                     <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
-                                    <ul role="list" className="mt-4 space-y-3">
+                                    <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+40100</strong> Movies & Series </li>
@@ -360,7 +360,7 @@ export default function PricingCards() {
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
                                     <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
-                                    <ul role="list" className="mt-4 space-y-3">
+                                    <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+40100</strong> Movies & Series </li>

@@ -8,6 +8,8 @@ import CarousselMovies from '../components/CarousselMovies';
 import '../components/navbar.scss'
 import PricingCards from '../components/PricingCards';
 import EliteCard from '../components/EliteCard';
+import Steps from '../components/Steps';
+import Faq from '../components/Faq'
 
 export default function Home() {
   return (
@@ -49,6 +51,10 @@ export default function Home() {
     <PricingCards />
 
     <EliteCard />
+
+    <Steps />
+
+    <Faq />
     </>
   );
 }
