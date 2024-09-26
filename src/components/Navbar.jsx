@@ -3,51 +3,53 @@ import { IoHome } from 'react-icons/io5';
 import { CiFileOn, CiImageOn } from 'react-icons/ci';
 import { LuGamepad2 } from 'react-icons/lu';
 import { HiOutlineBookOpen } from 'react-icons/hi';
-import { FaBell, FaUser } from 'react-icons/fa';
+import { FaLaptop, FaUser } from 'react-icons/fa';
 import './navbar.scss';
+import { SiMicrosoftvisio } from 'react-icons/si';
+import { Link } from 'react-router-dom'; // Make sure Link is imported
 
 const Navbar = () => {
   return (
     <>
       <ul className="horizontal-navbar">
         <li>
-          <a href="#">
+          <Link to="/"> 
             <IoHome className='icon_home text-white'/>
-            <span> Accueil </span>
-          </a>
+            <span className=' text-white'> Accueil </span>
+          </Link>
         </li>
         <li>
-          <a href="#">
-            <CiImageOn />
-            <span>Images</span>
-          </a>
+          <Link to="/produits">
+            <SiMicrosoftvisio className='icon_home text-white'/>
+            <span className=' text-white'> Services IPTV </span>
+          </Link>
         </li>
         <li>
-          <a href="#">
-            <CiFileOn />
-            <span>Files</span>
-          </a>
+          <Link to="/test-gratuit" className='icon_home text-white'>
+            <FaLaptop className=' text-white'/>
+            <span className=' text-white text-lg'> Test Gratuit </span>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="#">
             <LuGamepad2 />
             <span>Games</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="#">
             <HiOutlineBookOpen />
             <span>Books</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="#">
             <FaUser />
             <span>Profile</span>
-          </a>
+          </Link>
         </li>
       </ul>
-      
+
       <details>
         <summary>
           How it works
@@ -108,8 +110,6 @@ const Navbar = () => {
           <p>Sadly there's no way (that I know of) to animate the <code>&lt;div&gt;</code> when the <code>&lt;details&gt;</code> is closing.</p>
         </div>
       </details>
-                
-
     </>
   );
 };

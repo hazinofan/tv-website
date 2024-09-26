@@ -4,11 +4,6 @@
     box-sizing: border-box;
   }
   
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-  }
-  
   .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -58,22 +53,7 @@
     color: #27ae60;
     margin-bottom: 15px;
   }
-  
-  .order-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #27ae60;
-    color: white;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .order-btn:hover {
-    background-color: #219150;
-  }
-  
+
   .footer {
     text-align: center;
     margin-top: 50px;
@@ -125,9 +105,10 @@ a{
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0); backface-visibility: hidden;
     transform: translateZ(0);
-  background:#1B2030 url(https://images.unsplash.com/photo-1571993142257-eae0b44cf0f1?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ) 50% 0 no-repeat;
-  background-size:100%;
+  background:#1B2030 url(https://img.freepik.com/free-photo/group-friends-watching-tv-sport-match-together-emotional-fans-cheering-favourite-team-watching-exciting-football-concept-friendship-leisure-activity-emotions_155003-38767.jpg?t=st=1727181273~exp=1727184873~hmac=38f848733bf0c2a901d233b37bebebbc59e912e11ef3c987caa3dfda2addbaf8&w=1380) 50% 0 no-repeat;
+  background-size: cover;
   background-attachment:fixed;
+  background-position: center;
   animation: grow 360s  linear 10ms infinite;
   transition:all 0.4s ease-in-out;
   z-index:-2
@@ -204,20 +185,109 @@ a{
   0% { transform: scale(1) translateY(0px)}
   50% { transform: scale(1.2) translateY(-400px)}
 }
-.content{  
-  padding:5% 10%;
-  text-align:justify
-}
-.btn{
-  color:#333;
-  border:2px solid;
-  border-radius:3px;
-  text-decoration:none;
-  display:inline-block;
-  padding:5px 10px;
-  font-weight:600
+.content{
+  text-align:justify;
+  padding: 47px 80px;
+  text-align: center;
 }
 
-.twtr{
-  margin-top:100px
-}.btn.twtr:after{content:"\1F426";padding-left:5px}
+.three h1 {
+    font-size: 58px;
+    font-weight: 500;
+    padding-top: 200px;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    padding-bottom: 15px;
+    position: relative;
+  }
+  .three h1:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    width: 55px;
+    background-color: #ae45c1;
+  }
+  .three h1:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    height: 1px;
+    width: 95%;
+    max-width: 255px;
+    background-color: #333;
+  }
+
+  .cartBtn {
+    width: 165px;
+    height: 45px;
+    border: none;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    background-color: #05043e;
+    box-shadow: 0 20px 30px -7px rgba(27, 27, 27, 0.219);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  
+  .cart {
+    z-index: 2;
+  }
+  
+  .cartBtn:active {
+    transform: scale(0.96);
+  }
+  
+  .product {
+    position: absolute;
+    width: 12px;
+    border-radius: 3px;
+    content: "";
+    left: 23px;
+    bottom: 23px;
+    opacity: 0;
+    z-index: 1;
+    fill: rgb(211, 211, 211);
+  }
+  
+  .cartBtn:hover .product {
+    animation: slide-in-top 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-30px);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: translateY(0) rotate(-90deg);
+      opacity: 1;
+    }
+  }
+  
+  .cartBtn:hover .cart {
+    animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  @keyframes slide-in-left {
+    0% {
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
