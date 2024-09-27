@@ -253,3 +253,14 @@ a.hero_btn.buy_sec:hover {
     width: 100%;
     cursor: pointer
 }  
+
+a.button {
+  display: block;
+  text-align: center;
+  width: var(--width);
+  background: var(--button-color);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none; /* Prevent the underlining of text */
+}

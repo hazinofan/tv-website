@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Playwrite+DE+Grund:wght@100..400&display=swap');
 
@@ -13,6 +14,7 @@
   font-family: "Inria Sans", sans-serif;
 }
 
+/* Base styles */
 .home {
   height: 100vh; /* Full viewport height */
   display: flex;
@@ -23,13 +25,13 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url('https://host-iptv.com/images/pxfuel.jpg');
+    background-image: url('./assets/bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex; /* Apply Flexbox to center content */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .overlay {
       position: absolute;
@@ -37,13 +39,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.71); /* Black overlay with customizable opacity */
-      z-index: 1; /* Ensure overlay appears above the background image */
+      background-color: rgba(0, 0, 0, 0.71);
+      z-index: 1;
     }
 
     .content {
       position: relative;
-      z-index: 2; /* Make sure content is above the overlay */
+      z-index: 2;
       color: #fff;
       text-align: center;
 
@@ -55,63 +57,59 @@
   }
 }
 
-.content {
+/* Buttons styling */
+.btn {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid rgb(255, 255, 255);
+  padding: 10px 20px;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: bold;
+  background: transparent;
   position: relative;
-  z-index: 1;
-  text-align: center;
+  transition: all 1s;
+  overflow: hidden;
 }
 
-/* button css */
+.btn:hover {
+  color: rgb(255, 255, 255);
+}
 
-/* From Uiverse.io by SujitAdroja */ 
-.btn {
-    color: rgb(255, 255, 255);
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 2px solid rgb(255, 255, 255);
-    padding: 10px 20px;
-    font-size: 17px;
-    cursor: pointer;
-    font-weight: bold;
-    background: transparent;
-    position: relative;
-    transition: all 1s;
-    overflow: hidden;
-  }
-  
-  .btn:hover {
-    color: rgb(255, 255, 255);
-  }
-  
-  .btn::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    top: 0;
-    left: -40px;
-    transform: skewX(45deg);
-    background-color: #570bb9;
-    z-index: -1;
-    transition: all 1s;
-  }
-  
-  .btn:hover::before {
-    width: 160%;
-  }
-  
-.buttons{
-    margin-top: 72px;
-    display: flex;
-    gap: 50px;
-    justify-content: center;
+.btn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: #570bb9;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.btn:hover::before {
+  width: 160%;
+}
+
+/* Buttons container */
+.buttons {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 72px;
 }
 
 @media (max-width: 768px) {
-    .buttons{
-        margin: 72px 50px 0 50px;
-    }
+  .buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    margin: 72px 20px 0 20px;
+    gap: 20px; /* Reduce the gap between buttons */
+  }
 }
+
 
 .steps {
   width: 85%;
@@ -660,7 +658,7 @@ i.fa-solid{
   display: block;
   transition: 0.2s;
   font-size: 17px;
-  color: #FFE699;
+  color: #b38fe1;
   pointer-events: none;
 }
 
@@ -668,14 +666,14 @@ i.fa-solid{
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
-  border-image: linear-gradient(to right, #FFE699, #5D3294);
+  border-image: linear-gradient(to right, #b38fe1, #5D3294);
   border-image-slice: 1;
 }
 
 .form__field:focus ~ .form__label {
   top: 0;
   font-size: 17px;
-  color: #FFE699;
+  color: #b38fe1;
   font-weight: 700;
 }
 
@@ -758,6 +756,75 @@ i.fa-solid{
 }
 
 .submit-btn:hover {
-  background-color: #FFE699;
+  background-color: #b38fe1;
   color: #2C2F33;
 }
+
+@media (max-width: 768px) {
+
+  .form-container {
+    width: 95%;
+  }
+}
+
+a.button {
+  display: block;
+  text-align: center;
+  width: var(--width);
+  background: var(--button-color);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none; /* Prevent the underlining of text */
+}
+
+.btn_elite {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  z-index: 1;
+ }
+ 
+ .btn_elite::before,
+ .btn_elite::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  transform: skew(15deg);
+  transition: all 0.5s;
+  overflow: hidden;
+  z-index: -1;
+ }
+ 
+ .btn_elite::before {
+  left: -10px;
+  background: #791fce;
+ }
+ 
+ .btn_elite::after {
+  right: -10px;
+  background: #5a189a;
+ }
+ 
+ .btn_elite:hover::before,
+ .btn_elite:hover::after {
+  width: 58%;
+ }
+ 
+ .btn_elite:hover span {
+  color: #fdf8ff;
+  transition: 0.3s;
+ }
+ 
+ .btn_elite span {
+  color: #f8deff;
+  font-size: 18px;
+  transition: all 0.3s ease-in;
+ }

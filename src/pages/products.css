@@ -48,9 +48,9 @@
   }
   
   .price {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: bold;
-    color: #27ae60;
+    color: #0b6e35;
     margin-bottom: 15px;
   }
 
@@ -207,7 +207,7 @@ a{
     bottom: 0;
     height: 5px;
     width: 55px;
-    background-color: #ae45c1;
+    background-color: #111;
   }
   .three h1:after {
     content: "";
@@ -220,8 +220,19 @@ a{
     background-color: #333;
   }
 
+  @media (max-width: 768px) {
+
+    .three h1 {
+      font-size: 30px;
+    }
+
+    .content{
+      padding: 0;
+    }
+  }  
+
   .cartBtn {
-    width: 165px;
+    width: 190px;
     height: 45px;
     border: none;
     border-radius: 0px;
@@ -232,7 +243,7 @@ a{
     color: white;
     font-weight: 500;
     position: relative;
-    background-color: #05043e;
+    background-color: #190944;
     box-shadow: 0 20px 30px -7px rgba(27, 27, 27, 0.219);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -290,4 +301,92 @@ a{
       transform: translateX(0);
       opacity: 1;
     }
+  }
+
+  .btn_details {
+    font-size: 18px;
+    color: #05043e;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+  }
+  
+  .btn_details:focus,
+  .btn_details:hover {
+    color: #69237a;
+  }
+  
+  .btn_details:focus:after,
+  .btn_details:hover:after {
+    width: 100%;
+    left: 0%;
+  }
+  
+  .btn_details:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #632174;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
+
+  .cartBtn2 {
+    width: 165px;
+    height: 45px;
+    border: none;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    background-color: #520f5f;
+    box-shadow: 0 20px 30px -7px rgba(27, 27, 27, 0.219);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  
+  .cartBtn2:active {
+    transform: scale(0.96);
+  }
+  
+  .cartBtn2:hover .product {
+    animation: slide-in-top 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  .cartBtn2:hover {
+    background-color: #810999;
+  }
+  
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-30px);
+      opacity: 1;
+    }
+  
+    100% {
+      transform: translateY(0) rotate(-90deg);
+      opacity: 1;
+    }
+  }
+  
+  .cartBtn2:hover .cart {
+    animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }

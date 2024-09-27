@@ -3,130 +3,163 @@
         {
             "id": 1,
             "image" : "/assets/product.png",
-            "price" : 50 ,
-            "name": "12-Month PREMIUM Subscription",
-            "description": "Experience the ultimate entertainment package with UK Streaming's 12-month PREMIUM subscription. Access over 22,500 high-quality channels, including exclusive sports and premium adult content. Enjoy a vast library of more than 50,000 movies and series. Our cutting-edge servers are designed for performance and reliability, providing a seamless viewing experience. With regular updates, you'll always have access to the latest and greatest content.",
+            "price" : 60,
+            "before" : 70,
+            "name": "Abonnement PREMIUM 12 Mois",
+            "description": "Découvrez le pack de divertissement ultime avec l'abonnement PREMIUM de 12 mois de UK Streaming. Accédez à plus de 22 500 chaînes de haute qualité, y compris des sports exclusifs et du contenu adulte premium. Profitez d'une vaste bibliothèque de plus de 50 000 films et séries. Nos serveurs de pointe sont conçus pour offrir des performances et une fiabilité maximales, garantissant une expérience de visionnage fluide. Avec des mises à jour régulières, vous aurez toujours accès au contenu le plus récent et le plus intéressant.",
             "features": [
-                "Access to 22,500+ channels",
-                "Extensive library of 50,000+ movies and series",
-                "Exclusive adult content",
-                "Live sports channels",
-                "Instant activation",
-                "Anti-buffering technology",
-                "24/7 customer support",
-                "7-day money-back guarantee"
+                "Accès à plus de 22 500 chaînes",
+                "Bibliothèque étendue de plus de 50 000 films et séries",
+                "Contenu adulte exclusif",
+                "Chaînes de sport en direct",
+                "Activation instantanée",
+                "Technologie anti-mise en mémoire tampon",
+                "Assistance clientèle 24/7",
+                "Garantie de remboursement de 7 jours"
             ]
         },
         {
             "id": 2,
             "image" : "/assets/product.png",
-            "price" : 50 ,
-            "name": "6-Month PREMIUM Subscription",
-            "description": "Unlock a world of entertainment with the 6-month PREMIUM subscription from UK Streaming. Enjoy access to over 22,500 channels, including the latest movies, series, and premium adult content. With our high-performance servers, experience smooth and uninterrupted streaming. Regular updates ensure you never miss out on new releases.",
+            "price" : 45,
+            "before" : 52,
+            "name": "Abonnement PREMIUM 6 Mois",
+            "description": "Débloquez un monde de divertissement avec l'abonnement PREMIUM de 6 mois de UK Streaming. Profitez de plus de 22 500 chaînes, y compris les derniers films, séries et contenus adultes premium. Grâce à nos serveurs haute performance, profitez d'un streaming fluide et ininterrompu. Les mises à jour régulières vous assurent de ne jamais manquer les nouvelles sorties.",
             "features": [
-                "Access to 22,500+ channels",
-                "Over 50,000 movies and series available",
-                "Live sports coverage",
-                "Exclusive adult content",
-                "Instant activation",
-                "Anti-buffering technology",
-                "24/7 customer support"
+                "Accès à plus de 22 500 chaînes",
+                "Plus de 50 000 films et séries disponibles",
+                "Couverture sportive en direct",
+                "Contenu adulte exclusif",
+                "Activation instantanée",
+                "Technologie anti-mise en mémoire tampon",
+                "Assistance clientèle 24/7"
             ]
         },
         {
             "id": 3,
             "image" : "/assets/product.png",
-            "price" : 50 ,
-            "name": "3-Month PREMIUM Subscription",
-            "description": "Experience the pinnacle of IPTV technology with UK Streaming's 3-month PREMIUM subscription plan. Gain access to over 22,500 high-quality channels, including exclusive adult content, and enjoy a vast library of more than 50,000 movies and series. Our state-of-the-art servers are optimized for performance and stability, ensuring a seamless and uninterrupted viewing experience. Constant updates guarantee that you always have access to the latest content.",
+            "price" : 35,
+            "before" : 39,
+            "name": "Abonnement PREMIUM 3 Mois",
+            "description": "Découvrez la pointe de la technologie IPTV avec l'abonnement PREMIUM de 3 mois de UK Streaming. Accédez à plus de 22 500 chaînes de haute qualité, y compris du contenu adulte exclusif, et profitez d'une vaste bibliothèque de plus de 50 000 films et séries. Nos serveurs à la pointe de la technologie sont optimisés pour la performance et la stabilité, garantissant une expérience de visionnage fluide et ininterrompue. Les mises à jour constantes garantissent un accès au contenu le plus récent.",
             "features": [
-                "Access to 22,500+ channels",
-                "50,000+ movies and series",
-                "Exclusive adult content",
-                "Instant activation",
-                "Anti-buffering technology",
-                "24/7 customer support"
+                "Accès à plus de 22 500 chaînes",
+                "Bibliothèque étendue de plus de 50 000 films et séries",
+                "Contenu adulte exclusif",
+                "Chaînes de sport en direct",
+                "Activation instantanée",
+                "Technologie anti-mise en mémoire tampon",
+                "Assistance clientèle 24/7",
+                "Garantie de remboursement de 7 jours"
             ]
         },
         {
             "id": 4,
             "image" : "/assets/product.png",
-            "price" : 50 ,
-            "name": "1-Month PREMIUM Subscription",
-            "description": "Try UK Streaming's 1-month PREMIUM subscription for an incredible short-term viewing experience. With access to over 22,500 high-quality channels and an extensive selection of movies and series, you’ll find something for everyone. Our high-performance servers guarantee smooth streaming, making it the perfect choice for on-the-go entertainment.",
+            "price" : 25,
+            "before" : 30,
+            "name": "Abonnement PREMIUM 1 Mois",
+            "description": "Essayez l'abonnement PREMIUM d'un mois de UK Streaming pour une expérience de visionnage à court terme incroyable. Avec un accès à plus de 22 500 chaînes de haute qualité et une vaste sélection de films et séries, vous trouverez quelque chose pour tout le monde. Nos serveurs haute performance garantissent un streaming fluide, ce qui en fait le choix idéal pour le divertissement en déplacement.",
             "features": [
-                "Access to 22,500+ channels",
-                "Extensive library of movies and series",
-                "Instant activation",
-                "24/7 customer support"
+                "Accès à plus de 22 500 chaînes",
+                "Bibliothèque étendue de plus de 50 000 films et séries",
+                "Contenu adulte exclusif",
+                "Chaînes de sport en direct",
+                "Activation instantanée",
+                "Technologie anti-mise en mémoire tampon",
+                "Assistance clientèle 24/7",
+                "Garantie de remboursement de 7 jours"
             ]
         },
         {
             "id": 5,
             "image" : "/assets/product.png",
-            "price" : 50 ,
-            "name": "12-Month STANDARD Subscription",
-            "description": "Enjoy a year of entertainment with UK Streaming's 12-month STANDARD subscription. Access a diverse range of channels, including popular movies and series, while benefiting from our reliable servers that ensure a smooth viewing experience. Regular updates keep your content fresh and exciting.",
+            "price" : 55,
+            "before" : 60,
+            "name": "Abonnement STANDARD 12 Mois",
+            "description": "Profitez d'une année de divertissement avec l'abonnement STANDARD de 12 mois de UK Streaming. Accédez à une large gamme de chaînes, y compris des films et séries populaires, tout en bénéficiant de nos serveurs fiables qui assurent une expérience de visionnage fluide. Des mises à jour régulières maintiennent votre contenu frais et excitant.",
             "features": [
-                "Access to 10,000+ channels",
-                "Over 30,000 movies and series available",
-                "Instant activation",
-                "24/7 customer support"
+                "Accès à plus de 22 500 chaînes",
+                "Bibliothèque étendue de plus de 50 000 films et séries",
+                "Contenu adulte exclusif",
+                "Chaînes de sport en direct",
+                "Activation instantanée",
+                "Technologie anti-mise en mémoire tampon",
+                "Assistance clientèle 24/7",
+                "Garantie de remboursement de 7 jours"
             ]
         },
         {
             "id": 6,
             "image" : "/assets/product.png",
-            "price" : 50 ,
-            "name": "6-Month STANDARD Subscription",
-            "description": "With UK Streaming's 6-month STANDARD subscription, you can enjoy a wide variety of channels and an extensive library of movies and series. Our stable servers provide a consistent streaming experience, ensuring that you get the most out of your subscription.",
+            "price" : 40,
+            "before" : 45,
+            "name": "Abonnement STANDARD 6 Mois",
+            "description": "Avec l'abonnement STANDARD de 6 mois de UK Streaming, vous pouvez profiter d'une grande variété de chaînes et d'une vaste bibliothèque de films et séries. Nos serveurs stables offrent une expérience de streaming continue, assurant que vous tiriez le meilleur parti de votre abonnement.",
             "features": [
-                "Access to 10,000+ channels",
-                "Over 30,000 movies and series available",
-                "Instant activation",
-                "24/7 customer support"
+                "Accès à plus de 22 500 chaînes",
+                "Bibliothèque étendue de plus de 50 000 films et séries",
+                "Contenu adulte exclusif",
+                "Chaînes de sport en direct",
+                "Activation instantanée",
+                "Technologie anti-mise en mémoire tampon",
+                "Assistance clientèle 24/7",
+                "Garantie de remboursement de 7 jours"
             ]
         },
         {
             "id": 7,
             "image" : "/assets/product.png",
-            "price" : 50 ,
-            "name": "3-Month STANDARD Subscription",
-            "description": "UK Streaming's 3-month STANDARD subscription offers a fantastic value for those looking to explore a wide selection of channels and content. Experience seamless streaming on our optimized servers, providing reliable access to your favorite shows and movies.",
+            "price" : 28,
+            "before" : 32,
+            "name": "Abonnement STANDARD 3 Mois",
+            "description": "L'abonnement STANDARD de 3 mois de UK Streaming offre un rapport qualité-prix exceptionnel pour ceux qui souhaitent explorer une large sélection de chaînes et de contenus. Profitez d'un streaming fluide sur nos serveurs optimisés, garantissant un accès fiable à vos émissions et films préférés.",
             "features": [
-                "Access to 10,000+ channels",
-                "Over 30,000 movies and series available",
-                "Instant activation",
-                "24/7 customer support"
+                "Accès à plus de 22 500 chaînes",
+                "Bibliothèque étendue de plus de 50 000 films et séries",
+                "Contenu adulte exclusif",
+                "Chaînes de sport en direct",
+                "Activation instantanée",
+                "Technologie anti-mise en mémoire tampon",
+                "Assistance clientèle 24/7",
+                "Garantie de remboursement de 7 jours"
             ]
         },
         {
             "id": 8,
             "image" : "/assets/product.png",
-            "price" : 50 ,
-            "name": "1-Month STANDARD Subscription",
-            "description": "Perfect for those seeking a short-term entertainment solution, the 1-month STANDARD subscription from UK Streaming offers access to a range of channels and a selection of movies and series. Experience reliable streaming without any long-term commitment.",
+            "price" : 20,
+            "before" : 24,
+            "name": "Abonnement STANDARD 1 Mois",
+            "description": "Parfait pour ceux qui cherchent une solution de divertissement à court terme, l'abonnement STANDARD d'un mois de UK Streaming offre un accès à une gamme de chaînes et une sélection de films et séries. Profitez d'un streaming fiable sans engagement à long terme.",
             "features": [
-                "Access to 10,000+ channels",
-                "Over 30,000 movies and series available",
-                "Instant activation",
-                "24/7 customer support"
+                "Accès à plus de 22 500 chaînes",
+                "Bibliothèque étendue de plus de 50 000 films et séries",
+                "Contenu adulte exclusif",
+                "Chaînes de sport en direct",
+                "Activation instantanée",
+                "Technologie anti-mise en mémoire tampon",
+                "Assistance clientèle 24/7",
+                "Garantie de remboursement de 7 jours"
             ]
         },
         {
             "id": 9,
             "image" : "/assets/EliteProduct.png",
-            "price" : 90 ,
-            "name": "12-Month PLATINIUM Subscription",
-            "description": "The 12-month PLATINIUM subscription from UK Streaming is designed for the ultimate entertainment enthusiast. With access to an unrivaled selection of channels, including exclusive content, you'll never run out of things to watch. Our top-tier servers guarantee exceptional performance and stability, making your viewing experience truly unforgettable.",
+            "price" : 90,
+            "before" : 120,
+            "name": "Abonnement PLATINIUM 12 Mois",
+            "description": "L'abonnement PLATINIUM de 12 mois de UK Streaming est conçu pour l'amateur de divertissement ultime. Avec un accès à une sélection inégalée de chaînes, y compris du contenu exclusif, vous ne manquerez jamais de choses à regarder. Nos serveurs de premier ordre garantissent des performances et une stabilité exceptionnelles, rendant votre expérience de visionnage inoubliable.",
             "features": [
-                "Access to 30,000+ channels",
-                "Extensive library of 60,000+ movies and series",
-                "Exclusive content and events",
-                "Live sports coverage",
-                "Instant activation",
-                "Premium customer support",
-                "Anti-buffering technology"
+                "Accès à plus de 22 500 chaînes",
+                "Bibliothèque étendue de plus de 50 000 films et séries",
+                "Contenu adulte exclusif",
+                "Chaînes de sport en direct",
+                "Activation instantanée",
+                "Technologie anti-mise en mémoire tampon",
+                "Assistance clientèle 24/7",
+                "Garantie de remboursement de 7 jours",
+                "15 Mois d'abbonement"
             ]
         }
     ]

@@ -40,7 +40,7 @@ export default function Footer() {
         </div>
       </div>
           <div className="mt-4 md:mt-0">
-            <span className="text-lg text-gray-500 block mt-2">
+            <span className="text-lg text-gray-500 block mt-2 pb-5" style={{textAlignLast: 'center'}}>
               © Platinium-IPTV 2024, All rights reserved.
             </span>
           </div>

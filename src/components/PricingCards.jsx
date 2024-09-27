@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './pricing.css';
-import { FaCheck } from 'react-icons/fa';
+import { FaCheck, FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { BsCart2 } from 'react-icons/bs';
 
 export default function PricingCards() {
     const [billingType, setBillingType] = useState('monthly'); // State to toggle between billing types
@@ -46,16 +48,16 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
+                                    <Link to='/produits/abonnement-standard-1-mois'>
                                     <div data-tooltip="Price:-4€" className="button">
                                         <div className="button-wrapper">
-                                        <div className="text">Buy Now</div>
+                                        <button className="text">COMMANDER</button>
                                             <span className="icon">
-                                            <svg viewBox="0 0 16 16" className="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                                        </svg>
+                                            <BsCart2 />
                                             </span>
                                         </div>  
                                     </div>
+                                    </Link>
 
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
@@ -88,16 +90,16 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
+                                    <Link to='/produits/abonnement-standard-3-moiss'>
                                     <div data-tooltip="Price:-4€" className="button">
                                         <div className="button-wrapper">
-                                        <div className="text">Buy Now</div>
+                                        <button className="text">COMMANDER</button>
                                             <span className="icon">
-                                            <svg viewBox="0 0 16 16" className="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                                        </svg>
+                                            <BsCart2 />
                                             </span>
                                         </div>  
                                     </div>
+                                    </Link>
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
                                     <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
@@ -129,16 +131,16 @@ export default function PricingCards() {
                                     
                                     {/* button buy  */}
 
-                                    <div data-tooltip="Price:-5€" className="button">
+                                    <Link to='/produits/abonnement-standard-6-mois'>
+                                    <div data-tooltip="Price:-4€" className="button">
                                         <div className="button-wrapper">
-                                        <div className="text">Buy Now</div>
+                                        <button className="text">COMMANDER</button>
                                             <span className="icon">
-                                            <svg viewBox="0 0 16 16" className="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                                        </svg>
+                                            <BsCart2 />
                                             </span>
                                         </div>  
                                     </div>
+                                    </Link>
 
 
                                 </div>
@@ -173,16 +175,16 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <div data-tooltip="Price:-5€" className="button">
+                                    <Link to='/produits/abonnement-standard-12-mois'>
+                                    <div data-tooltip="Price:-4€" className="button">
                                         <div className="button-wrapper">
-                                        <div className="text">Buy Now</div>
+                                        <button className="text">COMMANDER</button>
                                             <span className="icon">
-                                            <svg viewBox="0 0 16 16" className="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                                        </svg>
+                                            <BsCart2 />
                                             </span>
                                         </div>  
                                     </div>
+                                    </Link>
 
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
@@ -219,16 +221,16 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <div data-tooltip="Price:-5€" className="button">
+                                    <Link to='/produits/abonnement-premium-1-mois'>
+                                    <div data-tooltip="Price:-4€" className="button">
                                         <div className="button-wrapper">
-                                        <div className="text">Buy Now</div>
+                                        <button className="text">COMMANDER</button>
                                             <span className="icon">
-                                            <svg viewBox="0 0 16 16" className="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                                        </svg>
+                                            <BsCart2 />
                                             </span>
                                         </div>  
                                     </div>
+                                    </Link>
 
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
@@ -261,16 +263,16 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
+                                    <Link to='/produits/abonnement-premium-3-mois'>
                                     <div data-tooltip="Price:-4€" className="button">
                                         <div className="button-wrapper">
-                                        <div className="text">Buy Now</div>
+                                        <button className="text">COMMANDER</button>
                                             <span className="icon">
-                                            <svg viewBox="0 0 16 16" className="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                                        </svg>
+                                            <BsCart2 />
                                             </span>
                                         </div>  
                                     </div>
+                                    </Link>
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
                                     <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
@@ -302,16 +304,16 @@ export default function PricingCards() {
                                     
                                     {/* button buy  */}
 
-                                    <div data-tooltip="Price:-7€" className="button">
+                                    <Link to='/produits/abonnement-premium-6-mois'>
+                                    <div data-tooltip="Price:-4€" className="button">
                                         <div className="button-wrapper">
-                                        <div className="text">Buy Now</div>
+                                        <button className="text">COMMANDER</button>
                                             <span className="icon">
-                                            <svg viewBox="0 0 16 16" className="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                                        </svg>
+                                            <BsCart2 />
                                             </span>
                                         </div>  
                                     </div>
+                                    </Link>
 
 
                                 </div>
@@ -346,16 +348,16 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <div data-tooltip="Price:-10€" className="button">
+                                    <Link to='/produits/abonnement-premium-12-mois'>
+                                    <div data-tooltip="Price:-4€" className="button">
                                         <div className="button-wrapper">
-                                        <div className="text">Buy Now</div>
+                                        <button className="text">COMMANDER</button>
                                             <span className="icon">
-                                            <svg viewBox="0 0 16 16" className="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                                        </svg>
+                                            <BsCart2 />
                                             </span>
                                         </div>  
                                     </div>
+                                    </Link>
 
                                 </div>
                                 <div className="pt-6 pb-8 px-6">

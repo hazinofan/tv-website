@@ -38,13 +38,10 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 2.5rem;  /* Reduced size */
-	height: 2.5rem;  /* Reduced size */
 	border-radius: 6px;
 	position: relative;
 
 	&:hover, &:focus, &.active {
-		background-color: #30305a;
 		outline: 0;
 		span { 
 			transform: scale(1);
@@ -275,3 +272,156 @@ summary {
 		transform: scale(1);
 	}
 }
+
+
+.horizontal-navbar {
+	list-style: none;
+	padding: 0;
+	background-color: #05043e;
+	display: flex;
+	justify-content: center;
+	padding: 0.5rem 1rem;
+	border-radius: 8px;
+	box-shadow: 0 5px 20px rgba(5, 4, 62, .25);
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 9999;
+  }
+  
+  li + li {
+	margin-left: 1.5rem;
+  }
+  
+  a.icon_home {
+	color: #FFF;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 6px;
+	position: relative;
+  
+	&:hover span {
+	  transform: scale(1);
+	  opacity: 1;
+	}
+  
+	span {
+	  position: absolute;
+	  background-color: #30305a;
+	  white-space: nowrap;
+	  padding: .3rem .75rem;
+	  border-radius: 6px;
+	  bottom: calc(100% + 0.5rem);
+	  transform-origin: center bottom;
+	  transform: scale(0);
+	  opacity: 0;
+	  transition: .15s ease;
+  
+	  &:before {
+		content: "";
+		display: block;
+		width: 10px;
+		height: 10px;
+		position: absolute;
+		background-color: #30305a;
+		bottom: -5px;
+		left: 50%;
+		transform: translateX(-50%) rotate(45deg);
+	  }
+	}
+  }
+  
+  .icon_home svg {
+	font-size: 1.5rem;
+  }
+  
+
+  a.button {
+    display: block;
+    text-align: center;
+    width: var(--width);
+    background: var(--button-color);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none; /* Prevent the underlining of text */
+}
+
+a.icon_home.active {
+	background-color: #ffffff; /* White background */
+	color: #05043e; /* Dark text for contrast */
+  }
+  
+  a.icon_home.active svg {
+	color: #05043e; /* Darken the icon in active state */
+  }
+
+  .cart-sidebar {
+	position: fixed;
+	top: 0;
+	right: -300px; /* Initially hidden off-screen */
+	width: 300px; /* Adjust as necessary */
+	height: 100vh;
+	background-color: rgb(75, 5, 54);
+	box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.5);
+	z-index: 1000;
+	padding: 20px;
+	transition: right 0.3s ease; /* Animate the right property */
+  }
+  
+  .cart-sidebar.open {
+	right: 0; /* Move into view */
+  }
+  
+  .cart-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 10px;
+  }
+  
+  .cart-items {
+	margin-top: 10px;
+  }
+  
+
+  /* navbar.scss */
+.cart-sidebar {
+	position: fixed;
+	top: 0;
+	right: -300px; /* Hidden by default */
+	width: 340px;
+	height: 100%;
+	background-color: #fff;
+	box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+	transition: transform 0.3s ease-in-out; /* Smooth transition */
+	z-index: 100; /* Ensure it's on top */
+  }
+  
+  .cart-sidebar.open {
+	transform: translateX(0); /* Move into view */
+  }
+  
+  .cart-header {
+	padding: 10px;
+	background-color: #f8f8f8;
+	display: flex;
+	justify-content: space-between;
+  }
+  
+  .cart-items {
+	padding: 20px;
+  }
+  
+  .cart-item {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+	border-bottom: 1px solid #e0e0e0;
+  }
+  

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../index.css'
 import product from '../assets/product.png'
 import CountUp from 'react-countup';
+import { Link } from 'react-router-dom';
 
 
 export default function HeroSection() {
@@ -39,7 +40,7 @@ export default function HeroSection() {
           <p>
           Vivez un divertissement haut de gamme avec notre fournisseur de premier ordre. Nous proposons une sélection parfaite de chaînes et de contenus, garantissant une expérience de streaming de haute qualité à nos clients. Rejoignez-nous pour un service inégalé qui apporte vos émissions, films et bien plus encore préférés directement sur votre écran.
           </p>
-          <button className="discover-btn">En savoir plus</button>
+          <Link to='/produits/abonnement-platinium-12-mois' className="discover-btn">En savoir plus</Link>
         </div>
         <div className="hero-image">
           <img src={product} alt="IPTV Box" />
