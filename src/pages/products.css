@@ -207,7 +207,7 @@ a{
     bottom: 0;
     height: 5px;
     width: 55px;
-    background-color: #111;
+    background-color: #b926a1;
   }
   .three h1:after {
     content: "";
@@ -217,7 +217,7 @@ a{
     height: 1px;
     width: 95%;
     max-width: 255px;
-    background-color: #333;
+    background-color: #751054;
   }
 
   @media (max-width: 768px) {

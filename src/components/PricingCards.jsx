@@ -49,7 +49,7 @@ export default function PricingCards() {
                                     {/* button buy  */}
 
                                     <Link to='/produits/abonnement-standard-1-mois'>
-                                    <div data-tooltip="Price:-4€" className="button">
+                                    <div data-tooltip="Prix:-4€" className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -91,7 +91,7 @@ export default function PricingCards() {
                                     {/* button buy  */}
 
                                     <Link to='/produits/abonnement-standard-3-moiss'>
-                                    <div data-tooltip="Price:-4€" className="button">
+                                    <div data-tooltip="Prix:-4€" className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -132,7 +132,7 @@ export default function PricingCards() {
                                     {/* button buy  */}
 
                                     <Link to='/produits/abonnement-standard-6-mois'>
-                                    <div data-tooltip="Price:-4€" className="button">
+                                    <div data-tooltip="Prix:-5€" className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -169,14 +169,14 @@ export default function PricingCards() {
                                     </p>
                                     <p className="mt-5">
                                         <span className="text-4xl font-bold text-slate-900 tracking-tighter">55€ </span>
-                                        <span className="text-xl line-through font-bold text-red-600 tracking-tighter">60€ </span>
+                                        <span className="text-xl line-through font-bold text-red-600 tracking-tighter">65€ </span>
                                     </p>
 
 
                                     {/* button buy  */}
 
                                     <Link to='/produits/abonnement-standard-12-mois'>
-                                    <div data-tooltip="Price:-4€" className="button">
+                                    <div data-tooltip="Prix:-10€" className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -222,7 +222,7 @@ export default function PricingCards() {
                                     {/* button buy  */}
 
                                     <Link to='/produits/abonnement-premium-1-mois'>
-                                    <div data-tooltip="Price:-4€" className="button">
+                                    <div data-tooltip="Prix:-5€" className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -264,7 +264,7 @@ export default function PricingCards() {
                                     {/* button buy  */}
 
                                     <Link to='/produits/abonnement-premium-3-mois'>
-                                    <div data-tooltip="Price:-4€" className="button">
+                                    <div data-tooltip="Prix:-4€" className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -305,7 +305,7 @@ export default function PricingCards() {
                                     {/* button buy  */}
 
                                     <Link to='/produits/abonnement-premium-6-mois'>
-                                    <div data-tooltip="Price:-4€" className="button">
+                                    <div data-tooltip="Prix:-7€" className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -349,7 +349,7 @@ export default function PricingCards() {
                                     {/* button buy  */}
 
                                     <Link to='/produits/abonnement-premium-12-mois'>
-                                    <div data-tooltip="Price:-4€" className="button">
+                                    <div data-tooltip="Prix:-10€" className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">

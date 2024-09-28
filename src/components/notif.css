@@ -1,0 +1,62 @@
+
+  
+  .success__icon {
+    width: 20px;
+    height: 20px;
+    transform: translateY(-2px);
+    margin-right: 8px;
+  }
+  
+  .success__icon path {
+    fill: #84D65A;
+  }
+  
+  .success__title {
+    font-weight: 500;
+    font-size: 14px;
+    color: #2B641E;
+  }
+  
+  .success__close {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+  .success__close path {
+    fill: #2B641E;
+  }
+
+  .notification {
+    position: fixed;
+    top: 20px;  /* Adjust the top value as needed */
+    right: 520px;  /* Adjust the right value as needed */
+    z-index: 9999;  /* Ensure it's on top of other elements */
+    opacity: 1;  /* Make sure it's fully visible */
+    display: block;  /* Ensure the element is visible */
+    transition: all 0.5s ease;  /* Add smooth transition */
+  }
+  
+  .notification.hide {
+    opacity: 0;  /* Hide when the notification is not shown */
+    display: none;
+  }
+  
+  .notification.show {
+    opacity: 1;  /* Ensure the notification is visible */
+    display: block;
+  }
+  
+  .success {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 480px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    background: #EDFBD8;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px -3px #111;
+  }

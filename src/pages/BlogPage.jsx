@@ -87,7 +87,7 @@ export default function BlogPage() {
                   <p className="text-base leading-8 my-5">{paragraph.text}</p>
                 </div>
               ))}
-              <Link to='/products' aria-label="Go to Products Page">
+              <Link to='/produits' aria-label="Go to Products Page">
               <blockquote className="border-l-4 text-base italic leading-8 my-5 p-5 text-indigo-600">
                 {blog.blockquote}
               </blockquote>
