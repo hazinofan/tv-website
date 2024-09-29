@@ -1,14 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './pricing.css';
 import { FaCheck, FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { BsCart2 } from 'react-icons/bs';
+import 'aos/dist/aos.css'; // Import AOS styles
+import AOS from 'aos'; // Import AOS
+import { useTranslation } from 'react-i18next'; // Import useTranslation
+
 
 export default function PricingCards() {
     const [billingType, setBillingType] = useState('monthly'); // State to toggle between billing types
+    const { t,i18n } = useTranslation();
+
+    useEffect(() => {
+        AOS.init();
+      }, []);
 
     return (
-        <div className="font-roboto">
+        <div className="font-roboto" data-aos="zoom-in" data-aos-delay="800">
             <div className="sm:flex sm:flex-col sm:align-center p-10">
                 <div className="relative self-center bg-slate-200 rounded-lg p-0.5 flex">
                     <button 
@@ -36,10 +45,10 @@ export default function PricingCards() {
                                 <div className="p-6">
                                     <h2 className="text-3xl leading-6 font-bold text-purple-600">STANDARD</h2>
                                     <p className="mt-2 text-xl text-slate-700 leading-tight">
-                                        La liste des chaînes pour adultes n'est pas incluse.
+                                    {t('pc.title')}
                                     </p>
                                     <p className="mt-10 text-2xl font-semibold text-black leading-tight">
-                                        1 Mois d'Abonnement 
+                                        {t('pc.1month')} 
                                     </p>
                                     <p className="mt-5">
                                         <span className="text-4xl font-bold text-slate-900 tracking-tighter">20€ </span>
@@ -48,8 +57,8 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <Link to='/produits/abonnement-standard-1-mois'>
-                                    <div data-tooltip="Prix:-4€" className="button">
+                                    <Link to={i18n.language === 'en' ? '/produits/standard-subscription-1-month' : '/produits/abonnement-standard-3-mois'}>
+                                        <div data-tooltip={i18n.language === 'en' ? "Price: -4€" : "Prix: -4€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -61,7 +70,7 @@ export default function PricingCards() {
 
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
-                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
+                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">{t('pc.included')}</h3>
                                     <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
@@ -78,10 +87,10 @@ export default function PricingCards() {
                                 <div className="p-6">
                                     <h2 className="text-3xl leading-6 font-bold text-purple-600">STANDARD</h2>
                                     <p className="mt-2 text-xl text-slate-700 leading-tight">
-                                        La liste des chaînes pour adultes n'est pas incluse.
+                                        {t('pc.title')}
                                     </p>
                                     <p className="mt-10 text-2xl font-semibold text-black leading-tight">
-                                        3 Mois d'Abonnement
+                                        {t('pc.3month')}
                                     </p>
                                     <p className="mt-5">
                                         <span className="text-4xl font-bold text-slate-900 tracking-tighter">28€ </span>
@@ -90,8 +99,8 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <Link to='/produits/abonnement-standard-3-moiss'>
-                                    <div data-tooltip="Prix:-4€" className="button">
+                                    <Link to={i18n.language === 'en' ? '/produits/standard-subscription-3-months' : '/produits/abonnement-standard-3-mois'}>
+                                        <div data-tooltip={i18n.language === 'en' ? "Price: -4€" : "Prix: -4€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -102,7 +111,7 @@ export default function PricingCards() {
                                     </Link>
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
-                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
+                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">{t('pc.included')}</h3>
                                     <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
@@ -119,10 +128,10 @@ export default function PricingCards() {
                                 <div className="p-6">
                                     <h2 className="text-3xl leading-6 font-bold text-purple-600">STANDARD</h2>
                                     <p className="mt-2 text-xl text-slate-700 leading-tight">
-                                        La liste des chaînes pour adultes n'est pas incluse.
+                                        {t('pc.title')}
                                     </p>
                                     <p className="mt-10 text-2xl font-semibold text-black leading-tight">
-                                        6 Mois d'Abonnement
+                                        {t('pc.6month')}
                                     </p>
                                     <p className="mt-5">
                                         <span className="text-4xl font-bold text-slate-900 tracking-tighter">40€ </span>
@@ -131,8 +140,8 @@ export default function PricingCards() {
                                     
                                     {/* button buy  */}
 
-                                    <Link to='/produits/abonnement-standard-6-mois'>
-                                    <div data-tooltip="Prix:-5€" className="button">
+                                    <Link to={i18n.language === 'en' ? '/produits/standard-subscription-6-months' : '/produits/abonnement-standard-6-mois'}>
+                                        <div data-tooltip={i18n.language === 'en' ? "Price: -5€" : "Prix: -5€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -145,7 +154,7 @@ export default function PricingCards() {
 
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
-                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
+                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">{t('pc.included')}</h3>
                                     <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
@@ -162,10 +171,10 @@ export default function PricingCards() {
                                 <div className="p-6">
                                     <h2 className="text-3xl leading-6 font-bold text-purple-600">STANDARD</h2>
                                     <p className="mt-2 text-xl text-slate-700 leading-tight">
-                                        La liste des chaînes pour adultes n'est pas incluse.
+                                        {t('pc.title')}
                                     </p>
                                     <p className="mt-10 text-2xl font-semibold text-black leading-tight">
-                                        12 Mois d'Abonnement
+                                        {t('pc.12month')}
                                     </p>
                                     <p className="mt-5">
                                         <span className="text-4xl font-bold text-slate-900 tracking-tighter">55€ </span>
@@ -175,8 +184,8 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <Link to='/produits/abonnement-standard-12-mois'>
-                                    <div data-tooltip="Prix:-10€" className="button">
+                                    <Link to={i18n.language === 'en' ? '/produits/standard-subscription-12-months' : '/produits/abonnement-standard-12-mois'}>
+                                        <div data-tooltip={i18n.language === 'en' ? "Price: -10€" : "Prix: -10€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -188,7 +197,7 @@ export default function PricingCards() {
 
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
-                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
+                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">{t('pc.included')}</h3>
                                     <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
@@ -209,10 +218,10 @@ export default function PricingCards() {
                                 <div className="p-6">
                                     <h2 className="text-3xl leading-6 font-bold text-yellow-600">PREMIUM</h2>
                                     <p className="mt-2 text-xl text-slate-700 leading-tight">
-                                        La liste des chaînes pour adultes est incluse.
+                                        {t('pc.title')}
                                     </p>
                                     <p className="mt-10 text-2xl font-semibold text-black leading-tight">
-                                        1 Mois d'Abonnement 
+                                        {t('pc.1month')} 
                                     </p>
                                     <p className="mt-5">
                                         <span className="text-4xl font-bold text-slate-900 tracking-tighter">25€ </span>
@@ -221,8 +230,8 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <Link to='/produits/abonnement-premium-1-mois'>
-                                    <div data-tooltip="Prix:-5€" className="button">
+                                    <Link to={i18n.language === 'en' ? '/produits/premium-subscription-1-month' : '/produits/abonnement-premium-1-mois'}>
+                                        <div data-tooltip={i18n.language === 'en' ? "Price: -5€" : "Prix: -5€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -234,7 +243,7 @@ export default function PricingCards() {
 
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
-                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
+                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">{t('pc.included')}</h3>
                                     <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
@@ -251,10 +260,10 @@ export default function PricingCards() {
                                 <div className="p-6">
                                     <h2 className="text-3xl leading-6 font-bold text-yellow-600">PREMIUM</h2>
                                     <p className="mt-2 text-xl text-slate-700 leading-tight">
-                                        La liste des chaînes pour adultes est incluse.
+                                        {t('pc.title')}
                                     </p>
                                     <p className="mt-10 text-2xl font-semibold text-black leading-tight">
-                                        3 Mois d'Abonnement
+                                        {t('pc.3month')}
                                     </p>
                                     <p className="mt-5">
                                         <span className="text-4xl font-bold text-slate-900 tracking-tighter">35€ </span>
@@ -263,8 +272,8 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <Link to='/produits/abonnement-premium-3-mois'>
-                                    <div data-tooltip="Prix:-4€" className="button">
+                                    <Link to={i18n.language === 'en' ? '/produits/premium-subscription-3-months' : '/produits/abonnement-premium-3-mois'}>
+                                        <div data-tooltip={i18n.language === 'en' ? "Price: -4€" : "Prix: -4€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -275,7 +284,7 @@ export default function PricingCards() {
                                     </Link>
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
-                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
+                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">{t('pc.included')}</h3>
                                     <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
@@ -292,10 +301,10 @@ export default function PricingCards() {
                                 <div className="p-6">
                                     <h2 className="text-3xl leading-6 font-bold text-yellow-600">PREMIUM</h2>
                                     <p className="mt-2 text-xl text-slate-700 leading-tight">
-                                        La liste des chaînes pour adultes est incluse.
+                                        {t('pc.title')}
                                     </p>
                                     <p className="mt-10 text-2xl font-semibold text-black leading-tight">
-                                        6 Mois d'Abonnement
+                                        {t('pc.6month')}
                                     </p>
                                     <p className="mt-5">
                                         <span className="text-4xl font-bold text-slate-900 tracking-tighter">45€ </span>
@@ -304,8 +313,8 @@ export default function PricingCards() {
                                     
                                     {/* button buy  */}
 
-                                    <Link to='/produits/abonnement-premium-6-mois'>
-                                    <div data-tooltip="Prix:-7€" className="button">
+                                    <Link to={i18n.language === 'en' ? '/produits/premium-subscription-6-months' : '/produits/abonnement-premium-6-mois'}>
+                                        <div data-tooltip={i18n.language === 'en' ? "Price: -7€" : "Prix: -7€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -318,7 +327,7 @@ export default function PricingCards() {
 
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
-                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
+                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">{t('pc.included')}</h3>
                                     <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>
@@ -335,10 +344,10 @@ export default function PricingCards() {
                                 <div className="p-6">
                                     <h2 className="text-3xl leading-6 font-bold text-yellow-600">PREMIUM</h2>
                                     <p className="mt-2 text-xl text-slate-700 leading-tight">
-                                        La liste des chaînes pour adultes est incluse.
+                                        {t('pc.title')}
                                     </p>
                                     <p className="mt-10 text-2xl font-semibold text-black leading-tight">
-                                        12 Mois d'Abonnement
+                                        {t('pc.12month')}
                                     </p>
                                     <p className="mt-5">
                                         <span className="text-4xl font-bold text-slate-900 tracking-tighter">60€ </span>
@@ -348,8 +357,8 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <Link to='/produits/abonnement-premium-12-mois'>
-                                    <div data-tooltip="Prix:-10€" className="button">
+                                    <Link to={i18n.language === 'en' ? '/produits/premium-subscription-12-months' : '/produits/abonnement-premium-12-mois'}>
+                                        <div data-tooltip={i18n.language === 'en' ? "Price: -10€" : "Prix: -10€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
                                             <span className="icon">
@@ -361,7 +370,7 @@ export default function PricingCards() {
 
                                 </div>
                                 <div className="pt-6 pb-8 px-6">
-                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">Ce qui est inclus</h3>
+                                    <h3 className="text-lg font-bold text-slate-900 tracking-wide uppercase">{t('pc.included')}</h3>
                                     <ul   className="mt-4 space-y-3">
                                         <li className="flex space-x-3">NO BUFFERING</li>
                                         <li className="flex space-x-3 items-center"> <FaCheck className=' text-green-600 text-sm' /> <strong>+16500</strong> Channels </li>

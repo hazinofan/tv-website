@@ -1,13 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
-import '../index.css'
-import product from '../assets/product.png'
+import '../index.css';
+import product from '../assets/product.png';
 import CountUp from 'react-countup';
 import { Link } from 'react-router-dom';
-
+import { useTranslation } from 'react-i18next'; // Import useTranslation
+import 'aos/dist/aos.css'; // Import AOS styles
+import AOS from 'aos'; // Import AOS
 
 export default function HeroSection() {
-    const [isVisible, setIsVisible] = useState(false);
-    const statsRef = useRef(null);
+  const { t } = useTranslation(); // Initialize translation hook
+  const [isVisible, setIsVisible] = useState(false);
+  const statsRef = useRef(null);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -32,15 +39,14 @@ export default function HeroSection() {
       }
     };
   }, []);
+
   return (
-    <section className="hero">
+    <section className="hero" data-aos="fade-down" data-aos-delay="800">
       <div className="hero-content">
         <div className="hero-text">
-          <h1>Meilleur service IPTV : service incroyable Platinium IPTV</h1>
-          <p>
-          Vivez un divertissement haut de gamme avec notre fournisseur de premier ordre. Nous proposons une sélection parfaite de chaînes et de contenus, garantissant une expérience de streaming de haute qualité à nos clients. Rejoignez-nous pour un service inégalé qui apporte vos émissions, films et bien plus encore préférés directement sur votre écran.
-          </p>
-          <Link to='/produits/abonnement-platinium-12-mois' className="discover-btn">En savoir plus</Link>
+          <h1>{t('hero.title')}</h1> {/* Use translation for title */}
+          <p>{t('hero.description')}</p> {/* Use translation for description */}
+          <Link to='/produits/abonnement-platinium-12-mois' className="discover-btn">{t('hero.discover')}</Link> {/* Use translation for button */}
         </div>
         <div className="hero-image">
           <img src={product} alt="IPTV Box" />
@@ -48,31 +54,31 @@ export default function HeroSection() {
       </div>
 
       <div className="stats" ref={statsRef}>
-      <div className="stat-item">
-        <h2>
-          {isVisible && <CountUp start={0} end={7200} duration={2.5} separator="," />}+
-        </h2>
-        <p>Member Active</p>
+        <div className="stat-item">
+          <h2>
+            {isVisible && <CountUp start={0} end={7200} duration={2.5} separator="," />}+
+          </h2>
+          <p>Member Active</p>
+        </div>
+        <div className="stat-item">
+          <h2>
+            {isVisible && <CountUp start={0} end={9000} duration={2.5} separator="," />}+
+          </h2>
+          <p>Happy Clients</p>
+        </div>
+        <div className="stat-item">
+          <h2>
+            {isVisible && <CountUp start={0} end={35} duration={2.5} />}+
+          </h2>
+          <p>Professional Team</p>
+        </div>
+        <div className="stat-item">
+          <h2>
+            {isVisible && <CountUp start={0} end={10} duration={2.5} />}+
+          </h2>
+          <p>Years Experience</p>
+        </div>
       </div>
-      <div className="stat-item">
-        <h2>
-          {isVisible && <CountUp start={0} end={9000} duration={2.5} separator="," />}+
-        </h2>
-        <p>Happy Clients</p>
-      </div>
-      <div className="stat-item">
-        <h2>
-          {isVisible && <CountUp start={0} end={35} duration={2.5} />}+
-        </h2>
-        <p>Professional Team</p>
-      </div>
-      <div className="stat-item">
-        <h2>
-          {isVisible && <CountUp start={0} end={10} duration={2.5} />}+
-        </h2>
-        <p>Years Experience</p>
-      </div>
-    </div>
     </section>
   );
 }

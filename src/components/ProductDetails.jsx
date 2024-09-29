@@ -3,19 +3,24 @@ import productImage from '../assets/product.png'; // Renamed for clarity
 import '../index.css';
 import { FaCheckCircle } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Notification from './Notification';
 
 export default function ProductDetails() {
   const [activeTab, setActiveTab] = useState('details');
+  const { i18n } = useTranslation(); // Destructure i18n to detect language
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
   const [notification, setNotification] = useState({ show: false, message: '' });
   const { name } = useParams();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch('/Products.json');
+        
+        const language = i18n.language; // Get the current language
+        const res = await fetch(`/locales/Products_${language}.json`);
         const data = await res.json();
         console.log('Fetched products:', data.products); 
         console.log('Name from params:', name); 
@@ -63,7 +68,7 @@ export default function ProductDetails() {
 
   return (
     <div>
-      <h1 className='text-5xl text-center pt-32' style={{ fontFamily: "fantasy" }}>Product Details</h1>
+      <h1 className='text-5xl text-center pt-32' style={{ fontFamily: "fantasy" }}>{t('products.title')}</h1>
       <div className=" mt-10 ml-10">
         <Link to='/produits' style={{justifyContent: 'flex-start'}}>
           <button
@@ -89,7 +94,7 @@ export default function ProductDetails() {
                 ></path>
               </svg>
             </div>
-            <p class="translate-x-2" style={{ fontFamily: 'Oswald, sans-serif', justifyContent: 'center' }}>Retourner</p>
+            <p class="translate-x-2" style={{ fontFamily: 'Oswald, sans-serif', justifyContent: 'center' }}>{t('products.return')}</p>
           </button>
         </Link>
       </div>
@@ -108,7 +113,7 @@ export default function ProductDetails() {
           </p>
           {/* Pass the product to the addToCart function */}
           <button className="cartBtn2" onClick={() => addToCart(product)}>
-            AJOUTER AU PANIER
+          {t('rembours.button')}
           </button>
         </div>
       </div>
@@ -149,44 +154,47 @@ export default function ProductDetails() {
           </div>
         )}
         {activeTab === 'moneyBack' && (
-          <div className="bg-gray-100 p-6 md:p-12 rounded-lg shadow-md max-w-3xl mx-auto my-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-center text-purple-600 mb-6">
-              Politique de Remboursement
-            </h2>
-            <p className="text-gray-700 mb-4">
-              Chez <strong>Platinum IPTV</strong>, nous nous engageons à fournir à nos clients une expérience de streaming exceptionnelle. Si, pour une raison quelconque, vous n'êtes pas entièrement satisfait de votre abonnement, nous avons mis en place une politique de remboursement claire :
-            </p>
-            
-            <ol className="list-decimal list-inside mb-6 space-y-4">
-              <li>
-                <strong>Droit de Rétractation</strong> : Vous avez le droit de vous rétracter de votre abonnement dans un délai de 14 jours à compter de la date d'achat. Pour exercer ce droit, veuillez nous contacter par email à <a href="mailto:votre_email@platinumiptv.uk" className="text-purple-600 underline">support@platinumiptv.uk</a>.
-              </li>
-              <li>
-                <strong>Conditions de Remboursement</strong> :
-                <ul className="list-disc list-inside ml-5 space-y-2">
-                  <li>Pour être éligible à un remboursement, votre demande doit être effectuée dans les 14 jours suivant l'achat.</li>
-                  <li>Pour que votre remboursement soit traité, vous devez fournir la preuve d'achat (comme un reçu ou une confirmation de commande).</li>
-                </ul>
-              </li>
-              <li>
-                <strong>Traitement des Remboursements</strong> :
-                <ul className="list-disc list-inside ml-5 space-y-2">
-                  <li>Une fois que nous aurons reçu votre demande de remboursement, nous l'examinerons et vous informerons de l'approbation ou du rejet de votre remboursement.</li>
-                  <li>Si votre demande est approuvée, le remboursement sera traité, et un crédit sera automatiquement appliqué à votre méthode de paiement d'origine dans un délai de 7 jours.</li>
-                </ul>
-              </li>
-              <li>
-                <strong>Exceptions</strong> : Les abonnements qui ont été utilisés après la période de 14 jours ne sont pas éligibles au remboursement.
-              </li>
-              <li>
-                <strong>Assistance</strong> : Si vous avez des questions ou des préoccupations concernant notre politique de remboursement, n'hésitez pas à nous contacter à <a href="mailto:support@platinumiptv.uk" className="text-purple-600 underline">support@platinumiptv.uk</a>.
-              </li>
-            </ol>
-      
-            <p className="text-gray-700">
-              Nous apprécions votre confiance et nous nous engageons à vous offrir le meilleur service possible.
-            </p>
-          </div>
+          <div className="bg-white p-8 md:p-12 rounded-lg shadow-xl max-w-3xl mx-auto my-10 border border-gray-200">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-center text-purple-700 mb-8 uppercase tracking-wide">
+            {t('rembours.title')}
+          </h2>
+          
+          <p className="text-gray-600 mb-6 leading-relaxed text-lg">
+            {t('rembours.body1')}
+          </p>
+          
+          <ol className="list-decimal list-inside mb-8 space-y-6 text-lg text-gray-700">
+            <li>
+              <span className="font-semibold">{t('rembours.body2')}</span>
+            </li>
+            <li>
+              <span className="font-semibold">{t('rembours.condition')} :</span>
+              <ul className="list-disc list-inside ml-6 mt-2 space-y-3 text-gray-600">
+                <li>{t('rembours.cond1')}</li>
+                <li>{t('rembours.cond2')}</li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-semibold">{t('rembours.title3')} :</span>
+              <ul className="list-disc list-inside ml-6 mt-2 space-y-3 text-gray-600">
+                <li>{t('rembours.trait1')}</li>
+                <li>{t('rembours.trait2')}</li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-semibold">{t('rembours.exception')} :</span> 
+              <span className="text-gray-600"> {t('rembours.excep')}</span>
+            </li>
+            <li>
+              <span className="font-semibold">{t('rembours.assis')} :</span> 
+              <span className="text-gray-600"> {t('rembours.assistext')}.</span>
+            </li>
+          </ol>
+        
+          <p className="text-gray-700 font-medium text-lg leading-relaxed">
+            {t('rembours.footer')}
+          </p>
+        </div>
         )}
       </div>
       {/* Notification */}

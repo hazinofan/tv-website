@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos'; // Import AOS
+import { useTranslation } from 'react-i18next';
 
 export default function Blog() {
+    const { i18n  } = useTranslation();
+
+
     useEffect(() => {
         AOS.init({
             duration: 1000,
@@ -16,18 +20,21 @@ export default function Blog() {
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                const res = await fetch('/blogs.json');
+                const language = i18n.language;
+                const res = await fetch(`/locales/blogs_${language}.json`);
                 if (!res.ok) {
                     throw new Error('Error Fetching the Data');
                 }
                 const data = await res.json();
-                setBlogs(data.blogs);
+        
+                // Ensure blogs is always an array, even if data.blogs is undefined
+                setBlogs(data.blogs || []); 
             } catch (error) {
                 console.log('Error fetching:', error);
             }
         };
         fetchBlogs();
-    }, []);
+    }, [i18n.language]);
 
     return (
         <div className="mt-32">

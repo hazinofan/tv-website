@@ -10,6 +10,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ScrollToTop from "./components/ScrollToTop ";
 import Layout from "./components/Layout"; // New component to handle Navbar/Footer visibility
 import TermsAndConditions from './components/TermsAndConditions';
+import './i18n'
 
 function App() {
   return (

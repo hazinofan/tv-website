@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Marquee from 'react-fast-marquee';
 import '../index.css';
+import 'aos/dist/aos.css'; // Import AOS styles
+import AOS from 'aos'; // Import AOS
 
 export default function CarousselMovies() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
     return (
-      <Marquee className="overflow-hidden" style={{ height: "290px" }}>
-        <div className="carousel-item flex flex-col justify-center items-center h-[250px] w-44">
+      <Marquee className="overflow-hidden" style={{ height: "290px" }} >
+        <div className="carousel-item flex flex-col justify-center items-center h-[250px] w-44" >
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg0sGhQ_v_sA4OCE8uS4DUHo6HbFkT60vhSA&s"
             className="carousel-image"

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Marquee from 'react-fast-marquee'
 import bbc from '../assets/BBC-Logo.png'
 import bein from '../assets/bein.png'
@@ -9,10 +9,18 @@ import tbs from '../assets/tbs.png'
 import sky from '../assets/sky.png'
 import hgtv from '../assets/hgtv.png'
 import nbc from '../assets/NBC_logo_2022.svg'
+import 'aos/dist/aos.css'; // Import AOS styles
+import AOS from 'aos'; // Import AOS
 
 export default function Caroussel() {
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+
   return (
-    <Marquee className="overflow-hidden" >
+    <Marquee className="overflow-hidden" data-aos="fade-down" data-aos-delay="800">
 
             <div className=" flex pr-10 flex-col justify-center items-center h-[150px] mx-5 w-32">
               <img src={bein} className="w-40  " alt="" />

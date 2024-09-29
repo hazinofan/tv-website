@@ -1,43 +1,52 @@
-import React from 'react'
-import { FaDownload, FaLaptop } from 'react-icons/fa'
-import { PiMaskHappyFill } from 'react-icons/pi'
+import React, { useEffect } from 'react';
+import { FaDownload, FaLaptop } from 'react-icons/fa';
+import { PiMaskHappyFill } from 'react-icons/pi';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
+import 'aos/dist/aos.css'; // Import AOS styles
+import AOS from 'aos'; // Import AOS
 
 export default function Integration() {
+  const { t } = useTranslation(); // Initialize translation hook
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
-        <section className="steps">
-            <h1>Rendre l'intégration de votre abonnement plus facile</h1>
-            <p>
-                Avant de pouvoir profiter de votre Abonnement, suivez simplement trois étapes simples.
-            </p>
+      <section className="steps" data-aos="fade-down" data-aos-delay="800">
+        <h1>{t('integration.title')}</h1> {/* Use translation for title */}
+        <p>
+          {t('integration.description')} {/* Use translation for description */}
+        </p>
 
-            <div className="row">
-                <div className="steps-col">
-                <h3 className=' flex gap-3 items-center' style={{placeContent: "center"}}>
-                    <FaLaptop /> Passer une commande
-                </h3>
-                <p>
-                    Accédez à notre service IPTV premium en seulement quelques clics, vous offrant une expérience immédiate et de qualité exceptionnelle.
-                </p>
-                </div>
-                <div className="steps-col">
-                <h3 className=' flex gap-3 items-center' style={{placeContent: "center"}}>
-                    <FaDownload /> Installation
-                </h3>
-                <p>
-                    Pour optimiser votre expérience avec votre abonnement IPTV, téléchargez simplement l'application appropriée pour votre appareil depuis la boutique en ligne de votre choix.
-                </p>
-                </div>
-                <div className="steps-col">
-                <h3 className=' flex gap-3 items-center' style={{placeContent: "center"}}>
-                    <PiMaskHappyFill /> AMUSEZ-VOUS
-                </h3>
-                <p>
-                    Explorez un vaste catalogue de milliers de chaînes et de vidéos, et plongez dans une expérience TV plus diversifiée et de meilleure qualité dès maintenant.
-                </p>
-                </div>
-            </div>
-            </section>
-        </>
-  )
+        <div className="row">
+          <div className="steps-col">
+            <h3 className='flex gap-3 items-center' style={{ placeContent: "center" }}>
+              <FaLaptop /> {t('integration.order')}
+            </h3>
+            <p>
+              {t('integration.orderDescription')} {/* Use translation for order description */}
+            </p>
+          </div>
+          <div className="steps-col">
+            <h3 className='flex gap-3 items-center' style={{ placeContent: "center" }}>
+              <FaDownload /> {t('integration.installation')}
+            </h3>
+            <p>
+              {t('integration.installationDescription')} {/* Use translation for installation description */}
+            </p>
+          </div>
+          <div className="steps-col">
+            <h3 className='flex gap-3 items-center' style={{ placeContent: "center" }}>
+              <PiMaskHappyFill /> {t('integration.enjoy')}
+            </h3>
+            <p>
+              {t('integration.enjoyDescription')} {/* Use translation for enjoy description */}
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }
