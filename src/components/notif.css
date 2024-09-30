@@ -1,62 +1,97 @@
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 480px; /* Adjusted to be more responsive */
+  z-index: 9999;
+  opacity: 1;
+  display: block;
+  transition: all 0.5s ease;
+  width: 90%; /* Make it responsive to screen size */
+  max-width: 480px;
+}
 
-  
-  .success__icon {
-    width: 20px;
-    height: 20px;
-    transform: translateY(-2px);
-    margin-right: 8px;
-  }
-  
-  .success__icon path {
-    fill: #84D65A;
-  }
-  
-  .success__title {
-    font-weight: 500;
-    font-size: 14px;
-    color: #2B641E;
-  }
-  
-  .success__close {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    margin-left: auto;
-  }
-  
-  .success__close path {
-    fill: #2B641E;
+.notification.hide {
+  opacity: 0;
+  display: none;
+}
+
+.notification.show {
+  opacity: 1;
+  display: block;
+}
+
+.success {
+  display: flex;
+  align-items: center;
+  background-color: #EDFBD8;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px -3px #111;
+}
+
+.success__icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  color: green;
+}
+
+.success__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.success__title {
+  font-weight: 500;
+  font-size: 14px;
+  color: #2B641E;
+  margin-bottom: 8px;
+}
+
+.success__button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 40%;
+}
+
+.success__button:hover {
+  background-color: #45a049;
+}
+
+.success__close {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.success__close path {
+  fill: #2B641E;
+}
+
+/* Ensure mobile responsiveness */
+@media (max-width: 768px) {
+  .success {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .notification {
-    position: fixed;
-    top: 20px;  /* Adjust the top value as needed */
-    right: 700px;  /* Adjust the right value as needed */
-    z-index: 9999;  /* Ensure it's on top of other elements */
-    opacity: 1;  /* Make sure it's fully visible */
-    display: block;  /* Ensure the element is visible */
-    transition: all 0.5s ease;  /* Add smooth transition */
+    right: 20px;
   }
-  
-  .notification.hide {
-    opacity: 0;  /* Hide when the notification is not shown */
-    display: none;
+
+  .success__button {
+    align-self: flex-start;
   }
-  
-  .notification.show {
-    opacity: 1;  /* Ensure the notification is visible */
-    display: block;
-  }
-  
-  .success {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    width: 480px;
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
-    background: #EDFBD8;
-    border-radius: 8px;
-    box-shadow: 0px 0px 5px -3px #111;
-  }
+}
+
+.success__content {
+  align-items: center;
+}

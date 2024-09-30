@@ -354,11 +354,11 @@ summary {
 
 a.icon_home.active {
 	background-color: #ffffff; /* White background */
-	color: #05043e; /* Dark text for contrast */
+	color: rgb(230, 143, 230); /* Dark text for contrast */
   }
   
   a.icon_home.active svg {
-	color: #05043e; /* Darken the icon in active state */
+	color: purple; /* Darken the icon in active state */
   }
 
   .cart-sidebar {

@@ -7,6 +7,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { IoMdClose } from 'react-icons/io';
 import plat from '../assets/logo.png';
 import { useTranslation } from 'react-i18next';
+import frFlag from '../assets/frFlag.webp'; // Import your flag images
+import gbFlag from '../assets/gbFlag.png';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -14,10 +16,19 @@ const Navbar = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [currentLang, setCurrentLang] = useState(i18n.language); // Language state
+  const [showNotification, setShowNotification] = useState(false); // Notification state
 
   // Toggle the cart
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
+  };
+
+  // Example function to show notification when a product is added to the cart
+  const addProductToCart = (product) => {
+    const updatedCartItems = [...cartItems, product];
+    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+    setCartItems(updatedCartItems);
+    setShowNotification(true); // Show notification
   };
 
   // Switch between French and English languages
@@ -82,15 +93,21 @@ const Navbar = () => {
     <>
       <ul className="horizontal-navbar">
         {[
-          { to: '/', icon: <IoHome />, label: t('Accueil') },
-          { to: '/produits', icon: <SiMicrosoftvisio />, label: t('Services') },
-          { to: '/test-gratuit', icon: <FaLaptop />, label: t('Test Gratuit') },
-          { to: '/blogs', icon: <FaFileInvoice />, label: t('Blogs') },
-          { icon: <IoCart />, label: t('Panier'), onClick: toggleCart },
+          { to: '/', icon: <IoHome />, label: t('navbar.link1') },
+          { to: '/produits', icon: <SiMicrosoftvisio />, label: t('navbar.link2') },
+          { to: '/test-gratuit', icon: <FaLaptop />, label: t('navbar.link3') },
+          { to: '/blogs', icon: <FaFileInvoice />, label: t('navbar.link4') },
+          { icon: <IoCart />, label: t('navbar.link5'), onClick: toggleCart },
           {
-            icon: currentLang === 'fr' ? '🇬🇧' : '🇫🇷',
-            label: currentLang === 'fr' ? t('Switch to English ') : t('Passer au Français'),
-            onClick: toggleLanguage
+            icon: (
+              <img
+                src={currentLang === 'fr' ? gbFlag : frFlag}
+                alt={currentLang === 'fr' ? 'Switch to English' : 'Passer au Français'}
+                className="w-16 h-6 inline-block"
+              />
+            ),
+            label: currentLang === 'fr' ? t('Switch to English') : t('Passer au Français'),
+            onClick: toggleLanguage,
           }
         ].map((item, index) => (
           <li key={index}>

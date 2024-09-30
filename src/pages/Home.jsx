@@ -14,6 +14,7 @@ import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos'; // Import AOS
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next'; // Import useTranslation
+import logo from '../assets/logo2.png'
 
 export default function Home() {
   const { t } = useTranslation(); // Initialize translation hook
@@ -28,10 +29,13 @@ export default function Home() {
         <div className="banner_container">
           <div className="overlay"></div>
           <div className="content">
-            <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl mx-4 sm:mx-8">
+            <div className="  " style={{ textAlign: "-webkit-center"}}>
+            <img src={logo} alt="" width={260}/>
+            </div>
+            <h1 className="font-bold text-3xl sm:text-4xl md:px-40 md:text-5xl lg:text-6xl mx-4 sm:mx-8 mt-8">
               {t('home.title')} {/* Translation for title */}
             </h1>
-            <p className="font-semibold pt-6 mx-4 sm:mx-8 lg:mx-72 text-base sm:text-lg md:text-xl">
+            <p className="font-semibold pt-6 mx-4 sm:mx-8 lg:mx-72 text-base sm:text-lg md:text-xl text-white">
               {t('home.description')} {/* Translation for description */}
             </p>
             <div className="buttons flex flex-col sm:flex-row gap-4 justify-center pt-6 text-white">

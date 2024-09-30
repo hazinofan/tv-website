@@ -105,7 +105,7 @@ a{
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0); backface-visibility: hidden;
     transform: translateZ(0);
-  background:#1B2030 url(https://img.freepik.com/free-photo/group-friends-watching-tv-sport-match-together-emotional-fans-cheering-favourite-team-watching-exciting-football-concept-friendship-leisure-activity-emotions_155003-38767.jpg?t=st=1727181273~exp=1727184873~hmac=38f848733bf0c2a901d233b37bebebbc59e912e11ef3c987caa3dfda2addbaf8&w=1380) 50% 0 no-repeat;
+  background:#1B2030 url(../assets/product_bg.jpg) 50% 0 no-repeat;
   background-size: cover;
   background-attachment:fixed;
   background-position: center;

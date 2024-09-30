@@ -72,11 +72,11 @@ export default function ProductDetails() {
       <div className=" mt-10 ml-10">
         <Link to='/produits' style={{justifyContent: 'flex-start'}}>
           <button
-            class="bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group"
+            className="bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group"
             type="button"
           >
             <div
-              class="bg-purple-400 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500"
+              className="bg-purple-400 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ export default function ProductDetails() {
                 ></path>
               </svg>
             </div>
-            <p class="translate-x-2" style={{ fontFamily: 'Oswald, sans-serif', justifyContent: 'center' }}>{t('products.return')}</p>
+            <p className="translate-x-2" style={{ fontFamily: 'Oswald, sans-serif', justifyContent: 'center' }}>{t('products.return')}</p>
           </button>
         </Link>
       </div>

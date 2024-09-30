@@ -1,12 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaLock } from 'react-icons/fa';
 import './checkout.css'
 import movie from '../assets/movie.jpg'
+import bgg from '../assets/bgg.jpg'
+import { useTranslation } from 'react-i18next';
 
 export default function Checkout() {
-
+  const { t } = useTranslation();
   let cartItems = [];
+  const navigate = useNavigate();
   try {
     const storedItems = localStorage.getItem('cartItems');
     cartItems = storedItems ? JSON.parse(storedItems) : [];
@@ -17,9 +20,27 @@ export default function Checkout() {
 
   const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
+  const handleOrderSubmit = (event) => {
+    event.preventDefault();
+
+    const customerInfo = {
+      name: event.target.name.value,
+      email: event.target.email.value,
+      country: event.target.country.value,
+      phone: event.target.phone.value,
+      message: event.target.message.value,
+    };
+
+    // Store customer information in localStorage
+    localStorage.setItem('customerInfo', JSON.stringify(customerInfo));
+
+    // Redirect to the Thank You page
+    navigate('/thank-you');
+  };
+
 
   return (
-    <div className="relative mx-auto w-full bg-cover bg-center" style={{ backgroundImage: `url(https://backgroundabstract.com/wp-content/uploads/edd/2022/02/5594016-e1656071131636.jpg)` }}>
+    <div className="relative mx-auto w-full bg-cover bg-center" style={{ backgroundImage: `url(${bgg})` }}>
       <div className="absolute inset-0 bg-black opacity-15 z-0"></div>
       
       <div className="grid min-h-screen grid-cols-10 relative z-10">
@@ -28,20 +49,20 @@ export default function Checkout() {
       </div>
           <div className="mx-auto w-full max-w-lg">       
             <h1 className="relative text-2xl font-medium text-black sm:text-3xl" style={{ fontFamily: 'Oswald, sans-serif', justifyContent: "center" }}>
-              Paiement sécurisé
+            {t('checkout.title')}
               <span className="mt-2 block h-1 w-10 bg-purple-600 sm:w-20"></span>
             </h1>
-            <form className="mt-10 flex flex-col space-y-4">
+            <form className="mt-10 flex flex-col space-y-4" onSubmit={handleOrderSubmit}>
               <input type="hidden" name="products" />
               <input type="hidden" name="total_price" />
               <div className=' z-999'>
                 <label htmlFor="name" className="text-md font-semibold text-white-500">
-                  Nom complet : <span className='text-red-600'>*</span>
+                {t('checkout.name')}<span className='text-red-600'>*</span>
                 </label>
                 <input
                   type="text"
                   id="name"
-                  name="full_name"
+                  name="name"
                   placeholder="John Doe"
                   className="mt-1 block w-full mb-4 rounded border-white bg-[#630a651f] py-3 px-4 text-sm placeholder-white-200 shadow-sm outline-none transition focus:ring-2 focus:ring-sky-500"
                   style={{ background: "#0000009e" }}
@@ -62,7 +83,7 @@ export default function Checkout() {
               </div>
               <div className="relative">
                 <label htmlFor="country" className="text-md font-semibold text-white-500">
-                  Pays : <span className='text-red-600'>*</span>
+                {t('checkout.country')}<span className='text-red-600'>*</span>
                 </label>
                 <input
                   type="text"
@@ -80,7 +101,7 @@ export default function Checkout() {
               </div>
               <div className="relative">
                 <label htmlFor="phone" className="text-md font-semibold text-white-500">
-                  Téléphone : <span className='text-red-600'>*</span>
+                {t('checkout.phone')} <span className='text-red-600'>*</span>
                 </label>
                 <input
                   type="text"
@@ -98,12 +119,12 @@ export default function Checkout() {
                 />
               </div>
               <div className="relative">
-                <label htmlFor="additional-info" className="text-md font-semibold text-white-500">
-                  Informations supplémentaires : <span className='text-red-600'></span>
+                <label htmlFor="message" className="text-md font-semibold text-white-500">
+                {t('checkout.infos')} <span className='text-red-600'></span>
                 </label>
                 <textarea
                   id="additional-info"
-                  name="additional_message"
+                  name="message"
                   placeholder="Informations supplémentaires ici"
                   rows="5"
                   cols="50"
@@ -118,38 +139,38 @@ export default function Checkout() {
               </div>
 
               <div className="bg-card text-card-foreground" style={{ fontFamily: 'Oswald, sans-serif', justifyContent: "center" }}>
-                <h1 className="text-2xl font-bold mb-4">Paiement</h1>
+                <h1 className="text-2xl font-bold mb-4">{t('checkout.paiement')}</h1>
                 <div className="bg-white-200 border-white border-2 p-4 rounded shadow-md">
-                  <h2 className="font-semibold mb-2">Facture à régler par PayPal ou carte de crédit.</h2>
+                  <h2 className="font-semibold mb-2">{t('checkout.invoice')}</h2>
                   <p className="text-muted-foreground text-xl">
-                    Merci d'avoir choisi Platinium IPTV , votre commande est en attente de paiement. Vous recevrez une facture par email à régler par PayPal ou par carte de crédit.
+                  {t('checkout.invoicedesc')}
                   </p>
                 </div>
                 <p className="mt-4 text-sm text-muted-foreground">
-                  Vos données personnelles seront utilisées pour traiter votre commande, soutenir votre expérience sur ce site et à d'autres fins décrites dans notre
+                {t('checkout.politic')}
                   <a href="#" className="text-primary underline ml-1">Politique de confidentialité</a>.
                 </p>
               </div>
 
-              <button class="Btn">
-                Passer La Commande
-                <svg class="svgIcon" viewBox="0 0 576 512"><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path></svg>
+              <button className="Btn" type='submit'>
+              {t('checkout.button')}
+                <svg className="svgIcon" viewBox="0 0 576 512"><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path></svg>
               </button>
               <div className="flex items-center gap-3 mt-6 justify-center text-xs">
                 <FaLock className='text-yellow-300' />
-                <p> Paiement sécurisé garanti. Vos informations sont en sécurité avec nous.</p>
+                <p> {t('checkout.secure')}</p>
               </div>
             </form>
             <p className="mt-10 text-center text-sm font-semibold text-white-500">
-              En passant cette commande, vous acceptez les{' '}
+            {t('checkout.termes')}{' '}
               <Link to='/termes-et-conditions' className="whitespace-nowrap text-teal-800 underline hover:text-teal-600">
-                Termes et Conditions
+              {t('checkout.condition')}
               </Link>
             </p>
           </div>
         </div>
         <div className="relative col-span-full flex flex-col py-6 pl-8 pr-4 sm:py-12 lg:col-span-4 lg:py-24">
-          <h2 className="sr-only">Résumé de la commande</h2>
+          <h2 className="sr-only">{t('checkout.resume')}</h2>
           <div>
             <img
               src={movie}
@@ -169,19 +190,19 @@ export default function Checkout() {
                 </li>
               ))
             ) : (
-              <li className="text-white">Votre panier est vide.</li>
+              <li className="text-white">{t('checkout.empty')}</li>
             )}
           </ul>
 
             <div className="my-5 h-0.5 w-full bg-#0000009e bg-opacity-30"></div>
             <div className="space-y-2 pb-44">
               <p className="flex justify-between text-lg font-bold text-white border-t-2 pt-5">
-                <span style={{ fontFamily: 'Oswald, sans-serif', justifyContent: "center" }}>Prix total :</span>
+                <span style={{ fontFamily: 'Oswald, sans-serif', justifyContent: "center" }}>{t('checkout.total')}</span>
                 <span>{totalPrice}€</span>
               </p>
               <p className="flex justify-between text-lg font-bold text-white pt-5">
-                <span style={{ fontFamily: 'Oswald, sans-serif', justifyContent: "center" }}>Remise :</span>
-                <span className='text-xs'>Vous n'avez pas de remise pour le moment</span>
+                <span style={{ fontFamily: 'Oswald, sans-serif', justifyContent: "center" }}>{t('checkout.remiseremise')}</span>
+                <span className='text-xs'>{t('checkout.discount')}</span>
               </p>
             </div>
           </div>

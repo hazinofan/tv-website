@@ -7,6 +7,35 @@ i18n
     resources: {
       en: {
         translation: {
+          ty:{
+              orderDetails: "Your Order Details",
+              orderNumber: "Order #{{orderNumber}}",
+              thankYouMessage: "Thank you for choosing Platinium IPTV!",
+              orderInfoTitle: "Order Info",
+              summary: "Summary",
+              status: "Status",
+              success: "Success",
+              paymentStatus: "Payment Status",
+              pendingPayment: "Pending Payment",
+              paymentMethod: "Payment Method",
+              paypalDebit: "Paypal / Debit Card",
+              customerInfoTitle: "Customer Info",
+              name: "Name",
+              email: "Email",
+              phone: "Phone",
+              country: "Country",
+              supportTeamTitle: "Our Support Team",
+              whatsappSupport: "Whatsapp Support",
+              emailSupport: "Email Support",
+              productsTitle: "Products in your order",
+              emptyCartMessage: "Your cart is empty.",
+              totalPrice: "Total Price",
+              accessIPTVTitle: "Access Your IPTV Service",
+              activationMessage: "Thank you for subscribing to Platinium IPTV! Your service will be activated shortly.",
+              emailCredentialsMessage: "You will receive an email with your login credentials and setup instructions. If you need assistance, please send us an email or contact our support team.",
+              enjoyMessage: "Enjoy the best IPTV experience with Platinium IPTV!",
+              button: "Back to Home page"
+            },
             faq: {
                 title: "Frequently Asked Questions",
                 subtitle: "Questions related to our IPTV services",
@@ -26,6 +55,13 @@ i18n
                 a7: "To try our IPTV service for free, simply fill out the form on our Free Trial page. You will receive your access codes within 5 to 10 minutes!",
                 q8: "Can I cancel my subscription at any time?",
                 a8: "Yes, you have the freedom to cancel your subscription at any time.",
+              },
+              navbar:{
+                link1 : "Home",
+                link2 : "Subscriptions",
+                link3 : " Free trial ",
+                link4 : " Blogs " ,
+                link5 : " Cart"
               },
               ft: {
                     "title": "Form to be filled to benefit from the free 2-hour IPTV trial:",
@@ -99,6 +135,26 @@ i18n
             orderNow: "Order Now",
             freeTest: "Free Test",
           },
+          checkout: {
+            "title": "Secure Payment",
+            "name": "Full Name: ",
+            "country": "Country: ",
+            "phone": "Phone: ",
+            "infos": "Additional Information:",
+            "paiement": "Payment",
+            "invoice": "Invoice payable by PayPal or credit card.",
+            "invoicedesc": "Thank you for choosing Platinium IPTV. Your order is pending payment. You will receive an invoice via email to be paid by PayPal or credit card.",
+            "politic": "Your personal data will be used to process your order, support your experience on this site, and for other purposes described in our",
+            "button": "Place Order",
+            "secure": "Guaranteed secure payment. Your information is safe with us.",
+            "termes": "By placing this order, you agree to the",
+            "condition": "Terms and Conditions",
+            "resume": "Order Summary",
+            "empty": "Your cart is empty.",
+            "discount": "You don't have any discounts at the moment.",
+            "total": "Total Price:",
+            "remise": "Discount:"
+          },          
           integration: {
             title: "Make Your Subscription Integration Easier",
             description: "Before you can enjoy your Subscription, simply follow three easy steps.",
@@ -148,6 +204,42 @@ i18n
       },
       fr: {
         translation: {
+              navbar:{
+                link1 : "Accueil",
+                link2 : "Abonnements",
+                link3 : "Test Gratuit",
+                link4 : " Blogs " ,
+                link5 : " Panier"
+              },
+          ty: {
+            orderDetails: "Détails de votre commande",
+            orderNumber: "Commande #{{orderNumber}}",
+            thankYouMessage: "Merci d'avoir choisi Platinium IPTV!",
+            orderInfoTitle: "Informations sur la commande",
+            summary: "Résumé",
+            status: "Statut",
+            success: "Succès",
+            paymentStatus: "Statut du paiement",
+            pendingPayment: "Paiement en attente",
+            paymentMethod: "Mode de paiement",
+            paypalDebit: "Paypal / Carte de débit",
+            customerInfoTitle: "Informations sur le client",
+            name: "Nom",
+            email: "Email",
+            phone: "Téléphone",
+            country: "Pays",
+            supportTeamTitle: "Notre équipe de support",
+            whatsappSupport: "Support Whatsapp",
+            emailSupport: "Support par email",
+            productsTitle: "Produits dans votre commande",
+            emptyCartMessage: "Votre panier est vide.",
+            totalPrice: "Prix total",
+            accessIPTVTitle: "Accéder à votre service IPTV",
+            activationMessage: "Merci de vous être abonné à Platinium IPTV! Votre service sera activé sous peu.",
+            emailCredentialsMessage: "Vous recevrez un email avec vos identifiants de connexion et les instructions de configuration. Si vous avez besoin d'aide, veuillez nous envoyer un email ou contacter notre équipe de support.",
+            enjoyMessage: "Profitez de la meilleure expérience IPTV avec Platinium IPTV!",
+            button: "Retourner a l'accueil"
+          },
             faq: {
                 title: "Foire Aux Questions",
                 subtitle: "Questions liées à nos services IPTV",
@@ -225,6 +317,26 @@ i18n
                 "footer" : "Nous apprécions votre confiance et nous nous engageons à vous offrir le meilleur service possible."?
                 "button" : " AJOUTER AU PANIER"
 
+              },
+              checkout: {
+                "title":" Paiement sécurisé " , 
+                "name" : "Nom complet : ",
+                "country" : "Pays : ",
+                "phone" :"Téléphone : " ,
+                "infos" : "Informations supplémentaires :",
+                "paiement" : "Paiement" ,
+                "invoice" : "Facture à régler par PayPal ou carte de crédit.",
+                "invoicedesc" : "Merci d'avoir choisi Platinium IPTV , votre commande est en attente de paiement. Vous recevrez une facture par email à régler par PayPal ou par carte de crédit.",
+                "politic" : "Vos données personnelles seront utilisées pour traiter votre commande, soutenir votre expérience sur ce site et à d'autres fins décrites dans notre",
+                "button" : " Passer la commande " , 
+                "secure" : "Paiement sécurisé garanti. Vos informations sont en sécurité avec nous.",
+                "termes" : "En passant cette commande, vous acceptez les",
+                "condition" : "Termes et Conditions",
+                "resume" : "Résumé de la commande",
+                "empty" : "Votre panier est vide.",
+                "discount" :"Vous n'avez pas de remise pour le moment", 
+                "total" : " Prix total :",
+                "remise" : "Remise :"
               },
               products:{
                 "title" : "Détails du produit",

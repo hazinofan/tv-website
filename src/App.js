@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollToTop ";
 import Layout from "./components/Layout"; // New component to handle Navbar/Footer visibility
 import TermsAndConditions from './components/TermsAndConditions';
 import './i18n'
+import ThankYouPage from './pages/Thankyou';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} /> {/* No Layout to hide Navbar/Footer */}
           <Route path="/privacy-policy" element={<Layout><PrivacyPolicy /></Layout>} />
           <Route path="/termes-et-conditions" element={<Layout><TermsAndConditions /></Layout>} />
+          <Route path="/thank-you" element={<ThankYouPage />} />
         </Routes>
       </Router>
     </div>

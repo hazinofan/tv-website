@@ -125,12 +125,10 @@
         }
       },
       {
-        "blogs": [
-          {
             "id": 5,
             "title": "The Importance of a Stable Internet Connection for IPTV",
             "description": "Learn why a stable and fast internet connection is essential for IPTV streaming. This article covers the minimum speed requirements for different types of streams, as well as tips for improving your connection.",
-            "blogImage": "/assets/internet-connection.png",
+            "blogImage": "/assets/The-Sky-IPTV-36-scaled.webp",
             "blockquote": "If you want to purchase a good quality subscription, visit this page: www.platinium-iptv.com/produits",
             "content": {
               "paragraphs": [
@@ -163,7 +161,7 @@
             "id": 6,
             "title": "How to Install IPTV on Amazon Fire Stick",
             "description": "This guide shows you how to install and set up IPTV on the Amazon Fire Stick, one of the most popular streaming devices. Learn how to access your IPTV subscription using Smart IPTV, Perfect Player, or other apps.",
-            "blogImage": "/assets/firestick.png",
+            "blogImage": "/assets/iptv.webp",
             "blockquote": "If you want to purchase a good quality subscription, visit this page: www.platinium-iptv.com/produits",
             "content": {
               "paragraphs": [
@@ -188,8 +186,6 @@
               "hashtags": ["#IPTV", "#FireStick", "#StreamingGuide"]
             }
           }
-        ]
-      }
       
     ]
   }
