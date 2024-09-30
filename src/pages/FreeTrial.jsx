@@ -191,7 +191,7 @@ const FreeTrial = () => {
                 </label>
               </div>
             </div>
-
+ 
             {/* Submit Button */}
             <div className="flex items-center justify-center h-20">
               <div className="relative group">

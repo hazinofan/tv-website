@@ -5,9 +5,12 @@ import './checkout.css'
 import movie from '../assets/movie.jpg'
 import bgg from '../assets/bgg.jpg'
 import { useTranslation } from 'react-i18next';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Checkout() {
   const { t } = useTranslation();
+  const form = useRef();
   let cartItems = [];
   const navigate = useNavigate();
   try {
@@ -24,13 +27,49 @@ export default function Checkout() {
     event.preventDefault();
 
     const customerInfo = {
-      name: event.target.name.value,
+      name: event.target.full_name.value,  // Access 'full_name' instead of 'name'
       email: event.target.email.value,
       country: event.target.country.value,
       phone: event.target.phone.value,
-      message: event.target.message.value,
+      message: event.target.additional_message.value, 
     };
 
+    const orderedProducts = cartItems.map(item => ({
+      title: item.name,
+      quantity: item.quantity,
+      category: item.category || 'N/A', // Assuming you have category data in the cart items
+      price: item.price,
+    }));
+
+    const emailData = {
+      full_name: customerInfo.name,
+      email: customerInfo.email,
+      country: customerInfo.country,
+      phone: customerInfo.phone,
+      additional_message: customerInfo.message,
+      products: orderedProducts, // This will be used in the template
+      total_price: totalPrice,
+    };
+
+    // Store customer information in localStorage
+    localStorage.setItem('customerInfo', JSON.stringify(customerInfo));
+
+    emailjs.send(
+      'service_fag2lxt', 
+      'template_6eze5ew', 
+      emailData, 
+      'V6V66M4E9uE9Cm9Dh'
+    ).then(
+      () => {
+        console.log('Email sent successfully!');
+        // Redirect to the Thank You page
+        navigate('/thank-you');
+      },
+      (error) => {
+        console.error('Failed to send email:', error);
+      }
+    );
+    
     // Store customer information in localStorage
     localStorage.setItem('customerInfo', JSON.stringify(customerInfo));
 
@@ -62,7 +101,7 @@ export default function Checkout() {
                 <input
                   type="text"
                   id="name"
-                  name="name"
+                  name="full_name"
                   placeholder="John Doe"
                   className="mt-1 block w-full mb-4 rounded border-white bg-[#630a651f] py-3 px-4 text-sm placeholder-white-200 shadow-sm outline-none transition focus:ring-2 focus:ring-sky-500"
                   style={{ background: "#0000009e" }}
@@ -124,7 +163,7 @@ export default function Checkout() {
                 </label>
                 <textarea
                   id="additional-info"
-                  name="message"
+                  name="additional_message"
                   placeholder="Informations supplémentaires ici"
                   rows="5"
                   cols="50"
@@ -142,7 +181,7 @@ export default function Checkout() {
                 <h1 className="text-2xl font-bold mb-4">{t('checkout.paiement')}</h1>
                 <div className="bg-white-200 border-white border-2 p-4 rounded shadow-md">
                   <h2 className="font-semibold mb-2">{t('checkout.invoice')}</h2>
-                  <p className="text-muted-foreground text-xl">
+                  <p className="text-muted-foreground text-black text-xl">
                   {t('checkout.invoicedesc')}
                   </p>
                 </div>

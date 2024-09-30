@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function BlogPage() {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
+  const { i18n  } = useTranslation();
 
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await fetch('/blogs.json');
+        const language = i18n.language;
+        const res = await fetch(`/locales/blogs_${language}.json`);
         const data = await res.json();
-
-        // Debugging log to verify data structure
-        console.log('Fetched data:', data);
-
         const foundBlog = data.blogs.find((item) => item.id === parseInt(id));
         setBlog(foundBlog);
       } catch (error) {
-        console.error('Error fetching blog details:', error);
       }
     };
 
@@ -51,8 +49,6 @@ export default function BlogPage() {
     );
   }
 
-  // Add console log for debugging
-  console.log('Blog details:', blog);
 
   return (
     <div className="mt-36">
