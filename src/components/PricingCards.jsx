@@ -17,7 +17,7 @@ export default function PricingCards() {
       }, []);
 
     return (
-        <div className="font-roboto" data-aos="zoom-in" data-aos-delay="800">
+        <div className="font-roboto" data-aos="zoom-in" data-aos-delay="400">
             <div className="sm:flex sm:flex-col sm:align-center p-10">
                 <div className="relative self-center bg-slate-200 rounded-lg p-0.5 flex">
                     <button 

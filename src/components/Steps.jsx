@@ -16,7 +16,7 @@ const Steps = () => {
   }, []);
 
   return (
-    <section className="pt-40 overflow-hidden" data-aos="fade-right" data-aos-delay="800">
+    <section className="pt-40 overflow-hidden" data-aos="fade-right" data-aos-delay="400">
       <div className="container px-4 mx-auto">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-wrap items-center -mx-5">

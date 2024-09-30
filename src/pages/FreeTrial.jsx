@@ -234,12 +234,56 @@ const FreeTrial = () => {
             <p className="text-green-600 text-xl font-semibold mt-4">Email sent successfully!</p>
           )}
         </div>
-
-        {/* Other information */}
         <div className="bg-white text-gray-800 p-10 rounded-lg shadow-md w-full md:w-3/4 lg:w-2/3 mx-auto text-left mt-28" data-aos="fade-down" data-aos-delay="400">
-          {/* Your content... */}
+            <h2 className="text-4xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-red-400" style={{ fontFamily: 'Oswald, sans-serif' }}>
+            {t('ft.guideTitle')}
+            </h2>
+            
+            <p className="text-lg mb-8 leading-relaxed text-gray-600">
+            {t('ft.guideDescription')}
+            </p>
+            
+            <h3 className="text-2xl font-semibold text-purple-600 mb-4" style={{ fontFamily: 'Oswald, sans-serif' }}>
+            {t('ft.activationProcedure')}
+            </h3>
+            
+            <ol className="list-decimal list-inside text-lg mb-8 space-y-2">
+                <li>
+                {t('ft.activationStep1')}
+                </li>
+                <li>{t('ft.activationStep2')}</li>
+                <li>
+                {t('ft.activationStep3')}
+                </li>
+            </ol>
+            
+            <h3 className="text-2xl font-semibold text-purple-600 mb-4" style={{ fontFamily: 'Oswald, sans-serif' }}>
+            {t('ft.usefulInfo')}
+            </h3>
+            
+            <p className="text-lg mb-8 leading-relaxed text-gray-600">
+            {t('ft.macAddressInfo')}
+            </p>
+            
+            <h3 className="text-2xl font-semibold text-purple-600 mb-4" style={{ fontFamily: 'Oswald, sans-serif' }}>
+            {t('ft.note')}
+            </h3>
+            
+            <ul className="list-disc list-inside text-lg mb-8 space-y-2">
+                <li>{t('ft.note1')}</li>
+                <li>{t('ft.note2')}</li>
+                <li>{t('ft.note3')}</li>
+            </ul>
+            
+            <h3 className="text-2xl font-semibold text-purple-600 mb-4" style={{ fontFamily: 'Oswald, sans-serif' }}>
+            {t('ft.contactInfo')}
+            </h3>
+            
+            <p className="text-lg leading-relaxed mb-8 text-gray-600">
+            {t('ft.contactNote')}
+            </p>
         </div>
-      </div>
+        </div>
     </>
   );
 };

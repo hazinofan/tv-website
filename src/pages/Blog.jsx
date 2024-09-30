@@ -30,7 +30,6 @@ export default function Blog() {
                 // Ensure blogs is always an array, even if data.blogs is undefined
                 setBlogs(data.blogs || []); 
             } catch (error) {
-                console.log('Error fetching:', error);
             }
         };
         fetchBlogs();

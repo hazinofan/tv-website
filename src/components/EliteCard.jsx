@@ -6,7 +6,7 @@ import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos'; // Import AOS
 
 export default function EliteCard() {
-  const { t } = useTranslation(); // Initialize translation
+  const { t, i18n } = useTranslation(); // Initialize translation
 
   useEffect(() => {
     AOS.init();
@@ -14,7 +14,7 @@ export default function EliteCard() {
 
   return (
     <div>
-      <div className="" data-aos="zoom-in" data-aos-delay="800">
+      <div className="" data-aos="zoom-in" data-aos-delay="400">
         <div className="relative pt-8">
           <div className="absolute inset-0 h-1/2"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,14 +73,14 @@ export default function EliteCard() {
                   <span className="ml-3 text-xl font-medium text-gray-500 dark:text-gray-400">EUR</span>
                 </div>
                 <div className="mt-6">
-                  <Link to="/produits/abonnement-platinium-12-mois" className="btn_elite inline-block py-2 px-4 bg-purple-600 text-white font-semibold rounded pt-3 hover:bg-purple-700 focus:ring-2 focus:ring-purple-500">
+                  <Link to={i18n.language === 'en' ? '/produits/platinium-12-month-subscription' : '/produits/abonnement-platinium-12-mois'} className="btn_elite inline-block py-2 px-4 bg-purple-600 text-white font-semibold rounded pt-3 hover:bg-purple-700 focus:ring-2 focus:ring-purple-500">
                     {t('eliteCard.orderButton')} {/* Use translation key */}
                   </Link>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div> 
       </div>
     </div>
   );

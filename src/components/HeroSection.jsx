@@ -41,7 +41,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="hero" data-aos="fade-down" data-aos-delay="800">
+    <section className="hero" data-aos="fade-down" data-aos-delay="400">
       <div className="hero-content">
         <div className="hero-text">
           <h1>{t('hero.title')}</h1> {/* Use translation for title */}

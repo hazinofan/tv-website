@@ -61,7 +61,6 @@ export default function Checkout() {
       'V6V66M4E9uE9Cm9Dh'
     ).then(
       () => {
-        console.log('Email sent successfully!');
         // Redirect to the Thank You page
         navigate('/thank-you');
       },

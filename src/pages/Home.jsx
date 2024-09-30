@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="home" data-aos="fade-down" data-aos-delay="800">
+      <div className="home" data-aos="fade-down" data-aos-delay="400">
         <div className="banner_container">
           <div className="overlay"></div>
           <div className="content">

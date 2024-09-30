@@ -22,14 +22,11 @@ export default function ProductDetails() {
         const language = i18n.language; // Get the current language
         const res = await fetch(`/locales/Products_${language}.json`);
         const data = await res.json();
-        console.log('Fetched products:', data.products); 
-        console.log('Name from params:', name); 
   
         const foundProduct = data.products.find(
           (item) => item.name.toLowerCase().replace(/\s+/g, '-') === name
         );
   
-        console.log('Found product:', foundProduct); 
         setProduct(foundProduct);
       } catch (error) {
         console.error('Error fetching product details:', error);
@@ -57,9 +54,6 @@ export default function ProductDetails() {
   
     // Show notification
     setNotification({ show: true, message: `${product.name} has been added to the cart!` });
-  
-    // Debugging: log the notification state
-    console.log("Notification state:", { show: true, message: `${product.name} has been added to the cart!` });
   };
 
   const clearCart = () => {

@@ -14,7 +14,7 @@ export default function Integration() {
 
   return (
     <>
-      <section className="steps" data-aos="fade-down" data-aos-delay="800">
+      <section className="steps" data-aos="fade-down" data-aos-delay="400">
         <h1>{t('integration.title')}</h1> {/* Use translation for title */}
         <p>
           {t('integration.description')} {/* Use translation for description */}

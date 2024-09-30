@@ -34,10 +34,17 @@ const ThankYouPage = () => {
   return (
     <div className="max-w-7xl mx-auto p-8 bg-white shadow-lg rounded-lg my-14">
       {/* Header */}
-      <div className="flex justify-between items-center">
-        <h1 className="text-4xl font-bold mb-6 text-gray-800">{t('ty.orderDetails')}</h1>
-        <img src={logo} alt="" width={250} />
-      </div>
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center lg:mb-16" style={{ textAlign: "-webkit-center"}}>
+  <img 
+    src={logo} 
+    alt="Logo" 
+    className="w-56 mb-4 lg:mb-0 lg:w-64 lg:ml-24" 
+  />
+  <h1 className="text-3xl lg:text-4xl font-bold text-gray-800">
+    {t('ty.orderDetails')}
+  </h1>
+</div>
+
       <p className="text-2xl text-gray-600 mb-10">
         {t('ty.orderNumber', { orderNumber })} <br />
         {t('ty.thankYouMessage')}

@@ -27,7 +27,7 @@ export default function Faq() {
   ];
 
   return (
-    <div className="" data-aos="fade-right" data-aos-delay="800">
+    <div className="" data-aos="fade-right" data-aos-delay="400">
       <section className="max-w-5xl mx-auto py-10 sm:py-20">
         <div className="flex items-center justify-center flex-col gap-y-2 py-5">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{t('faq.title')}</h2>
