@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="grid items-center  text-gray-600">
             <p className="flex items-center mb-10 gap-2 text-lg">
               <MdSupportAgent className="text-purple-600 text-2xl" />
-              +212665078502
+              +44 7453 930081
             </p>
             <p className="flex items-center gap-2 text-lg">
               <MdEmail className="text-purple-600 text-2xl" />
