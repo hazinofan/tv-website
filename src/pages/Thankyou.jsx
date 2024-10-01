@@ -4,6 +4,7 @@ import { MdEmail } from 'react-icons/md';
 import { useTranslation } from 'react-i18next';
 import logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const ThankYouPage = () => {
   const { t } = useTranslation();  // Initialize the translation hook
@@ -32,6 +33,18 @@ const ThankYouPage = () => {
   };
 
   return (
+    <>
+    <Helmet>
+        <title>Thank You Page - PLATINIUM IPTV Commande</title>
+        <meta
+          name="description"
+          content="Merci pour votre commande ! Profitez de votre abonnement IPTV et accédez à des milliers de chaînes en streaming. Vos informations d'activation vous seront envoyées par e-mail."
+        />
+        <meta
+          name="keywords"
+          content="Commande, Abonnement IPTV, Paiement Sécurisé, Achat en Ligne, Streaming Vidéo"
+        />
+      </Helmet>
     <div className="max-w-7xl mx-auto p-8 bg-white shadow-lg rounded-lg my-14">
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center lg:mb-16" style={{ textAlign: "-webkit-center"}}>
@@ -144,7 +157,9 @@ const ThankYouPage = () => {
         </Link>
       </div>
     </div>
+    </>
   );
+
 };
 
 export default ThankYouPage;

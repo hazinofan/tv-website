@@ -4,6 +4,7 @@ import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos'; // Import AOS
 import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
+import { Helmet } from "react-helmet";
 
 const FreeTrial = () => {
   const { t } = useTranslation();
@@ -56,10 +57,9 @@ const FreeTrial = () => {
             macAddress: ''
           });
 
-          // Hide success message after 3 seconds
           setTimeout(() => {
             setEmailSent(false);
-          }, 3000);
+          }, 5000);
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -69,6 +69,13 @@ const FreeTrial = () => {
 
   return (
     <>
+
+      <Helmet>
+        <title>IPTV Gratuit - Obtenez votre essai gratuit IPTV | Platinium IPTV</title>
+        <meta name="description" content="Testez gratuitement IPTV pendant 2 heures. Obtenez un code IPTV gratuit, m3u IPTV et accédez à smart IPTV TV avec Platinium IPTV." />
+        <meta name="keywords" content="iptv gratuit, code iptv, m3u iptv, smart iptv tv" />
+      </Helmet>
+
       <h1
         className="text-3xl font-extrabold text-black md:text-5xl lg:text-4xl pt-40"
         data-aos="fade-down"

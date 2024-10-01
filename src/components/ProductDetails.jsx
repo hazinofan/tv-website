@@ -5,6 +5,7 @@ import { FaCheckCircle } from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Notification from './Notification';
+import { Helmet } from 'react-helmet';
 
 export default function ProductDetails() {
   const [activeTab, setActiveTab] = useState('details');
@@ -61,6 +62,21 @@ export default function ProductDetails() {
   };
 
   return (
+    <>
+      <Helmet>
+        <title>
+          {product ? `${product.name} - Meilleur abonnement IPTV | Acheter IPTV en ligne` : 'PLATINIUM IPTV - Loading...'}
+        </title>
+        <meta
+          name="description"
+          content={product 
+            ? `Achetez ${product.name}, le meilleur abonnement IPTV. Profitez des chaînes IPTV, des essais et de la compatibilité avec les appareils MAG. En savoir plus!` 
+            : 'Découvrez nos abonnements IPTV de haute qualité, compatibles avec divers appareils.'}
+        />
+        <meta name="keywords" content="iptv smarters pro, smart iptv, abonnement iptv, iptv belgique" />
+      </Helmet>
+
+
     <div>
       <h1 className='text-5xl text-center pt-32' style={{ fontFamily: "fantasy" }}>{t('products.title')}</h1>
       <div className=" mt-10 ml-10">
@@ -94,7 +110,7 @@ export default function ProductDetails() {
       </div>
 
       <div className="m-2 group px-10 py-5 bg-black/10 rounded-lg flex flex-col items-center justify-center gap-2 relative after:absolute after:h-full after:bg-[#05043e] z-20 shadow-lg after:-z-20 after:w-full after:inset-0 after:rounded-lg transition-all duration-300 hover:transition-all hover:duration-300 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden cursor-pointer after:-translate-y-full after:hover:translate-y-0">
-        <img src={product ? product.image : '/path/to/placeholder.png'} alt="" style={{width: "330px"}} />
+        <img src={product ? product.image : '/path/to/placeholder.png'} alt="Produit IPTV iptv smarters pro" style={{width: "330px"}} />
         <p className="cardtxt font-semibold text-black tracking-wider text-center group-hover:text-white text-3xl pb-3" style={{ fontFamily: 'Oswald, sans-serif', justifyContent: 'center'}}>
           {product ? product.name : 'Loading...'}
         </p>
@@ -198,5 +214,6 @@ export default function ProductDetails() {
         onClose={() => setNotification({ show: false, message: '' })}
       />
     </div>
-  );
+    </>
+);
 }

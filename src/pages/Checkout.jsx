@@ -7,6 +7,7 @@ import bgg from '../assets/bgg.jpg'
 import { useTranslation } from 'react-i18next';
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { Helmet } from 'react-helmet';
 
 export default function Checkout() {
   const { t } = useTranslation();
@@ -78,6 +79,13 @@ export default function Checkout() {
 
 
   return (
+    <>
+    <Helmet>
+        <title>{t('checkout.title')} | Sécurisez votre abonnement IPTV</title>
+        <meta name="description" content="Complete your purchase securely. Enjoy the best IPTV subscription with exclusive offers and customer support." />
+        <meta name="keywords" content="Commande, Abonnement IPTV, Paiement Sécurisé, Achat en Ligne" />
+        <link rel="canonical" href="https://platinium-iptv.com/checkout" />
+      </Helmet>
     <div className="relative mx-auto w-full bg-cover bg-center" style={{ backgroundImage: `url(${bgg})` }}>
       <div className="absolute inset-0 bg-black opacity-15 z-0"></div>
       
@@ -127,15 +135,11 @@ export default function Checkout() {
                   type="text"
                   id="country"
                   name="country"
-                  placeholder="Royaume-Uni"
+                  placeholder="USA"
                   className="block w-full mt-2 rounded border-white bg-[#630a651f] py-3 px-4 pr-10 text-sm placeholder-white-200 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
                   style={{ background: "#0000009e" }}
                 />
-                <img
-                  src="/images/uQUFIfCYVYcLK0qVJF5Yw.png"
-                  alt=""
-                  className="absolute bottom-3 right-3 max-h-4"
-                />
+
               </div>
               <div className="relative">
                 <label htmlFor="phone" className="text-md font-semibold text-white-500">
@@ -150,11 +154,7 @@ export default function Checkout() {
                   className="block w-full mt-2 rounded border-white bg-#0000009e py-3 px-4 pr-10 text-sm placeholder-white-200 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
                   style={{ background: "#0000009e" }}
                 />
-                <img
-                  src="/images/uQUFIfCYVYcLK0qVJF5Yw.png"
-                  alt=""
-                  className="absolute bottom-3 right-3 max-h-4"
-                />
+
               </div>
               <div className="relative">
                 <label htmlFor="message" className="text-md font-semibold text-white-500">
@@ -169,11 +169,6 @@ export default function Checkout() {
                   className="block w-full mt-2 rounded border-white bg-#0000009e py-3 px-4 pr-10 text-sm placeholder-white-200 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
                   style={{ background: "#0000009e", minHeight: "150px", resize: "vertical" }}
                 ></textarea>
-                <img
-                  src="/images/uQUFIfCYVYcLK0qVJF5Yw.png"
-                  alt=""
-                  className="absolute bottom-3 right-3 max-h-4"
-                />
               </div>
 
               <div className="bg-card text-card-foreground" style={{ fontFamily: 'Oswald, sans-serif', justifyContent: "center" }}>
@@ -212,7 +207,7 @@ export default function Checkout() {
           <div>
             <img
               src={movie}
-              alt=""
+              alt="Paiement Sécurisé"
               className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-gray-800/85 to-black opacity-95"></div>
@@ -222,7 +217,7 @@ export default function Checkout() {
             {cartItems.length > 0 ? (
               cartItems.map((item, index) => (
                 <li key={index} className="flex justify-between place-items-center text-lg text-white">
-                  <img src={item.image} alt="" width={120} />
+                  <img src={item.image} alt="Abonnement IPTV" width={120} />
                   <span>{item.name} (x{item.quantity})</span>
                   <span>{item.price}€</span>
                 </li>
@@ -247,5 +242,6 @@ export default function Checkout() {
         </div>
       </div>
     </div>
+    </>
   );
 }

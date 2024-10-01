@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet'; // Import Helmet
 import '../index.css';  
 import { FaLaptop, FaShoppingCart } from 'react-icons/fa';
 import Caroussel from '../components/Caroussel';
@@ -25,12 +26,47 @@ export default function Home() {
 
   return (
     <>
+      <Helmet>
+        {/* Page Title */}
+        <title>PLATINIUM IPTV - Meilleur Fournisseur IPTV en France en 2024</title>
+
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="Découvrez PLATINIUM IPTV, votre fournisseur d'abonnement IPTV de haute qualité. Compatible avec IPTV Smarters Pro, Smart IPTV, et plus encore. Profitez du meilleur service IPTV dès aujourd'hui."
+        />
+
+        {/* Keywords */}
+        <meta
+          name="keywords"
+          content="PLATINIUM IPTV, iptv smarters pro, abonnement iptv, iptv smarters, smart iptv"
+        />
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="PLATINIUM IPTV - Abonnement IPTV Smarters Pro, Smart IPTV" />
+        <meta
+          property="og:description"
+          content="PLATINIUM IPTV vous offre les meilleurs abonnements IPTV. Compatible avec IPTV Smarters Pro et Smart IPTV. Rejoignez-nous pour une expérience IPTV exceptionnelle."
+        />
+        <meta property="og:url" content="https://www.platinium-iptv.com" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="PLATINIUM IPTV - Abonnement IPTV Smarters Pro, Smart IPTV" />
+        <meta
+          name="twitter:description"
+          content="Abonnez-vous à PLATINIUM IPTV et profitez du meilleur service IPTV sur IPTV Smarters Pro, Smart IPTV, et plus."
+        />
+      </Helmet>
+
+
       <div className="home" data-aos="fade-down" data-aos-delay="400">
         <div className="banner_container">
           <div className="overlay"></div>
           <div className="content">
             <div className="  " style={{ textAlign: "-webkit-center"}}>
-            <img src={logo} alt="" width={260}/>
+            <img src={logo} alt="PLATINIUM IPTV - Abonnement IPTV Smarters Pro" width={260}/>
             </div>
             <h1 className="font-bold text-3xl sm:text-4xl md:px-40 md:text-5xl lg:text-6xl mx-4 sm:mx-8 mt-8">
               {t('home.title')} {/* Translation for title */}

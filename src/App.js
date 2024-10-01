@@ -12,12 +12,18 @@ import Layout from "./components/Layout"; // New component to handle Navbar/Foot
 import TermsAndConditions from './components/TermsAndConditions';
 import './i18n'
 import ThankYouPage from './pages/Thankyou';
+import WhatsAppButton from './components/WhatsAppButton';
+import SitemapComponent from './Sitemap';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <ScrollToTop />
+        <WhatsAppButton
+        phoneNumber="447453930081" // Replace with your WhatsApp number
+        message="Hello, I would like to get more information about your services."
+      />
         <Routes>
           <Route path="/" element={<Layout><Home /></Layout>} />
           <Route path="/produits" element={<Layout><Products /></Layout>} />
@@ -29,6 +35,7 @@ function App() {
           <Route path="/privacy-policy" element={<Layout><PrivacyPolicy /></Layout>} />
           <Route path="/termes-et-conditions" element={<Layout><TermsAndConditions /></Layout>} />
           <Route path="/thank-you" element={<ThankYouPage />} />
+          <Route path="/sitemap" component={SitemapComponent} />
         </Routes>
       </Router>
     </div>

@@ -1,7 +1,34 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 export default function PrivacyPolicy() {
   return (
+    <>
+    <Helmet>
+        <title>Politique de Confidentialité - PLATINIUM IPTV</title>
+        <meta
+          name="description"
+          content="Découvrez notre politique de confidentialité. Nous protégeons vos données personnelles et vous informons sur leur collecte et utilisation."
+        />
+        <meta
+          name="keywords"
+          content="Politique de confidentialité, protection des données, cookies, collecte d'informations, droits de l'utilisateur"
+        />
+        <meta property="og:title" content="Politique de Confidentialité - PLATINIUM IPTV" />
+        <meta
+          property="og:description"
+          content="Apprenez comment nous collectons, utilisons et protégeons vos informations personnelles avec PLATINIUM IPTV."
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://www.platinium-iptv.com/privacy-policy" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Politique de Confidentialité - PLATINIUM IPTV" />
+        <meta
+          name="twitter:description"
+          content="Protégez vos données personnelles. Consultez notre politique de confidentialité pour en savoir plus."
+        />
+      </Helmet>
+      
     <div className="bg-gray-100 min-h-screen py-12 px-6 lg:px-24">
       <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">Politique de Confidentialité</h1>
@@ -80,5 +107,6 @@ export default function PrivacyPolicy() {
         </div>
       </div>
     </div>
+    </>
   );
 }

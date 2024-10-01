@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
+  <url>
+    <loc>https://platinium-iptv.com/</loc>
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Products Page -->
+  <url>
+    <loc>https://platinium-iptv.com/produits</loc>
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Product Details Page (dynamic URLs) -->
+  <url>
+    <loc>https://platinium-iptv.com/produits/abonnement-premium-1-mois</loc> <!-- Replace {name} with actual product names -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://platinium-iptv.com/produits/abonnement-premium-3-mois</loc> <!-- Replace {name} with actual product names -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://platinium-iptv.com/produits/abonnement-premium-6-mois</loc> <!-- Replace {name} with actual product names -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://platinium-iptv.com/produits/abonnement-premium-12-mois</loc> <!-- Replace {name} with actual product names -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://platinium-iptv.com/produits/abonnement-standard-1-mois</loc> <!-- Replace {name} with actual product names -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://platinium-iptv.com/produits/abonnement-standard-3-mois</loc> <!-- Replace {name} with actual product names -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://platinium-iptv.com/produits/abonnement-standard-6-mois</loc> <!-- Replace {name} with actual product names -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://platinium-iptv.com/produits/abonnement-standard-12-mois</loc> <!-- Replace {name} with actual product names -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://platinium-iptv.com/produits/abonnement-platinium-12-mois</loc> <!-- Replace {name} with actual product names -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Free Trial Page -->
+  <url>
+    <loc>https://platinium-iptv.com/test-gratuit</loc>
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blogs Page -->
+  <url>
+    <loc>https://platinium-iptv.com/blogs</loc>
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Details Page (dynamic URLs) -->
+  <url>
+    <loc>https://platinium-iptv.com/blogs/1</loc> <!-- Replace {id} with actual blog post IDs -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://platinium-iptv.com/blogs/2</loc> <!-- Replace {id} with actual blog post IDs -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://platinium-iptv.com/blogs/3</loc> <!-- Replace {id} with actual blog post IDs -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://platinium-iptv.com/blogs/4</loc> <!-- Replace {id} with actual blog post IDs -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://platinium-iptv.com/blogs/5</loc> <!-- Replace {id} with actual blog post IDs -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://platinium-iptv.com/blogs/6</loc> <!-- Replace {id} with actual blog post IDs -->
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Checkout Page -->
+  <url>
+    <loc>https://platinium-iptv.com/checkout</loc>
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Privacy Policy Page -->
+  <url>
+    <loc>https://platinium-iptv.com/privacy-policy</loc>
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Terms and Conditions Page -->
+  <url>
+    <loc>https://platinium-iptv.com/termes-et-conditions</loc>
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Thank You Page -->
+  <url>
+    <loc>https://platinium-iptv.com/thank-you</loc>
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Sitemap Page -->
+  <url>
+    <loc>https://platinium-iptv.com/sitemap</loc>
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

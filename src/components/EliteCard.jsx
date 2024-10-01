@@ -21,7 +21,7 @@ export default function EliteCard() {
             <div className="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
               <div className="flex-1 bg-white dark:bg-gray-900 px-6 py-8 lg:p-12">
                 <h3 className="text-2xl font-extrabold text-gray-900 dark:text-white sm:text-3xl">
-                  {t('eliteCard.title')} 
+                  {t('eliteCard.title')}
                 </h3>
                 <p className="mt-6 text-base text-gray-500 dark:text-gray-300">
                   {t('eliteCard.description')} {/* Use translation key */}

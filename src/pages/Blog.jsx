@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos'; // Import AOS
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet';
 
 export default function Blog() {
-    const { i18n  } = useTranslation();
+    const { t, i18n  } = useTranslation();
 
 
     useEffect(() => {
@@ -36,6 +37,16 @@ export default function Blog() {
     }, [i18n.language]);
 
     return (
+        <>
+        <Helmet>
+        <title>Blog Platinium IPTV - Séries TV, Films HD et Films pour Adultes</title>
+        <meta
+            name="description"
+            content="Découvrez les derniers articles de blog sur les séries TV, films HD, films pour adultes et contenus liés à l'IPTV sur le blog Platinium IPTV. Restez à jour sur le divertissement !"
+        />
+        <meta name="keywords" content="blog, séries TV, films HD, films pour adultes, IPTV, divertissement" />
+        </Helmet>
+
         <div className="mt-32">
             <section className="pb-24">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -48,7 +59,7 @@ export default function Blog() {
                         <span
                             className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-red-700"
                         >
-                            PLATINIUM IPTV BLOG PAGE
+                            {t('blog.h1')}
                         </span>
                     </h1>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12" data-aos="fade-down" data-aos-delay="400">
@@ -84,5 +95,6 @@ export default function Blog() {
                 </div>
             </section>
         </div>
+        </>
     );
 }

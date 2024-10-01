@@ -58,25 +58,25 @@ export default function HeroSection() {
           <h2>
             {isVisible && <CountUp start={0} end={7200} duration={2.5} separator="," />}+
           </h2>
-          <p>Member Active</p>
+          <p>Membres Actifs</p>
         </div>
         <div className="stat-item">
           <h2>
             {isVisible && <CountUp start={0} end={9000} duration={2.5} separator="," />}+
           </h2>
-          <p>Happy Clients</p>
+          <p>Clients Satisfaits</p>
         </div>
         <div className="stat-item">
           <h2>
             {isVisible && <CountUp start={0} end={35} duration={2.5} />}+
           </h2>
-          <p>Professional Team</p>
+          <p>Équipe Professionnelle</p>
         </div>
         <div className="stat-item">
           <h2>
             {isVisible && <CountUp start={0} end={10} duration={2.5} />}+
           </h2>
-          <p>Years Experience</p>
+          <p>Années d'Expérience</p>
         </div>
       </div>
     </section>
