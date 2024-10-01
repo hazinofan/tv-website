@@ -13,7 +13,6 @@ import TermsAndConditions from './components/TermsAndConditions';
 import './i18n'
 import ThankYouPage from './pages/Thankyou';
 import WhatsAppButton from './components/WhatsAppButton';
-import SitemapComponent from './Sitemap';
 
 function App() {
   return (
@@ -35,7 +34,6 @@ function App() {
           <Route path="/privacy-policy" element={<Layout><PrivacyPolicy /></Layout>} />
           <Route path="/termes-et-conditions" element={<Layout><TermsAndConditions /></Layout>} />
           <Route path="/thank-you" element={<ThankYouPage />} />
-          <Route path="/sitemap" component={SitemapComponent} />
         </Routes>
       </Router>
     </div>
