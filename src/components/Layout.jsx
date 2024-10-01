@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import WhatsAppButton from './WhatsAppButton';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -13,6 +14,7 @@ const Layout = ({ children }) => {
       {!hideNavbarAndFooter && <Navbar />}
       <main>{children}</main>
       {!hideNavbarAndFooter && <Footer />}
+      {!hideNavbarAndFooter && <WhatsAppButton />}
     </>
   );
 };
