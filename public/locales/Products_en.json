@@ -5,7 +5,7 @@
         "image": "/assets/product.png",
         "price": 60,
         "before": 70,
-        "name": "PREMIUM Subscription 12 Months",
+        "name": "PREMIUM IPTV Subscription 12 Months",
         "type": "PREMIUM",
         "description": "PLATINIUM IPTV offers you exclusive access to more than 16,500 channels and 40,000 films and series on VOD, all in 4K, FHD, HD without any buffering. Enjoy stable streaming across all your devices, with 24/7 support and customization options. Subscribe now for a premium IPTV experience.",
         "features": [
@@ -25,7 +25,7 @@
         "price": 45,
         "before": 52,
         "type": "PREMIUM",
-        "name": "PREMIUM Subscription 6 Months",
+        "name": "PREMIUM IPTV Subscription 6 Months",
         "description": "PLATINIUM IPTV offers you exclusive access to more than 16,500 channels and 40,000 films and series on VOD, all in 4K, FHD, HD without any buffering. Enjoy stable streaming across all your devices, with 24/7 support and customization options. Subscribe now for a premium IPTV experience.",
         "features": [
           "Access to more than 22,500 channels",
@@ -43,7 +43,7 @@
         "price": 35,
         "before": 39,
         "type": "PREMIUM",
-        "name": "PREMIUM Subscription 3 Months",
+        "name": "PREMIUM IPTV Subscription 3 Months",
         "description": "PLATINIUM IPTV offers you exclusive access to more than 16,500 channels and 40,000 films and series on VOD, all in 4K, FHD, HD without any buffering. Enjoy stable streaming across all your devices, with 24/7 support and customization options. Subscribe now for a premium IPTV experience.",
         "features": [
           "Access to more than 22,500 channels",
@@ -62,7 +62,7 @@
         "price": 25,
         "before": 30,
         "type": "PREMIUM",
-        "name": "PREMIUM Subscription 1 Month",
+        "name": "PREMIUM IPTV Subscription 1 Month",
         "description": "PLATINIUM IPTV offers you exclusive access to more than 16,500 channels and 40,000 films and series on VOD, all in 4K, FHD, HD without any buffering. Enjoy stable streaming across all your devices, with 24/7 support and customization options. Subscribe now for a premium IPTV experience..",
         "features": [
           "Access to more than 22,500 channels",
@@ -81,7 +81,7 @@
         "price": 55,
         "before": 60,
         "type": "STANDARD",
-        "name": "STANDARD Subscription 12 Months",
+        "name": "STANDARD IPTV Subscription 12 Months",
         "description": "PLATINIUM IPTV offers you exclusive access to more than 16,500 channels and 40,000 films and series on VOD, all in 4K, FHD, HD without any buffering. Enjoy stable streaming across all your devices, with 24/7 support and customization options. Subscribe now for a premium IPTV experience.",
         "features": [
           "Access to more than 22,500 channels",
@@ -100,7 +100,7 @@
         "price": 40,
         "before": 45,
         "type": "STANDARD",
-        "name": "STANDARD Subscription 6 Months",
+        "name": "STANDARD IPTV Subscription 6 Months",
         "description": "PLATINIUM IPTV offers you exclusive access to more than 16,500 channels and 40,000 films and series on VOD, all in 4K, FHD, HD without any buffering. Enjoy stable streaming across all your devices, with 24/7 support and customization options. Subscribe now for a premium IPTV experience.",
         "features": [
           "Access to more than 22,500 channels",
@@ -119,7 +119,7 @@
         "price": 28,
         "before": 32,
         "type": "STANDARD",
-        "name": "STANDARD Subscription 3 Months",
+        "name": "STANDARD IPTV Subscription 3 Months",
         "description": "PLATINIUM IPTV offers you exclusive access to more than 16,500 channels and 40,000 films and series on VOD, all in 4K, FHD, HD without any buffering. Enjoy stable streaming across all your devices, with 24/7 support and customization options. Subscribe now for a premium IPTV experience.",
         "features": [
           "Access to more than 22,500 channels",
@@ -138,7 +138,7 @@
         "price": 20,
         "before": 24,
         "type": "STANDARD",
-        "name": "STANDARD Subscription 1 Month",
+        "name": "STANDARD IPTV Subscription 1 Month",
         "description": "PLATINIUM IPTV offers you exclusive access to more than 16,500 channels and 40,000 films and series on VOD, all in 4K, FHD, HD without any buffering. Enjoy stable streaming across all your devices, with 24/7 support and customization options. Subscribe now for a premium IPTV experience.",
         "features": [
           "Access to more than 22,500 channels",
@@ -157,7 +157,7 @@
         "price" : 90,
         "before" : 120,
         "type": "PLATINIUM",
-        "name": "PLATINIUM 12-Month Subscription",
+        "name": "PLATINIUM 15-Month IPTV Subscription",
         "description": "PLATINIUM IPTV offers you exclusive access to more than 16,500 channels and 40,000 films and series on VOD, all in 4K, FHD, HD without any buffering. Enjoy stable streaming across all your devices, with 24/7 support and customization options. Subscribe now for a premium IPTV experience.",
         "features": [
             "Access to over 22,500 channels",
@@ -168,7 +168,7 @@
             "Anti-buffering technology",
             "24/7 customer support",
             "7-day money-back guarantee",
-            "15 months of subscription"
+            "15 months of IPTV Subscription"
         ]
     }
 ]
