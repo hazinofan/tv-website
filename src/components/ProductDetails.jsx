@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import productImage from '../assets/product.png'; // Renamed for clarity
 import '../index.css';
 import { FaCheckCircle } from 'react-icons/fa';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Notification from './Notification';
 import { Helmet } from 'react-helmet';
@@ -15,6 +15,10 @@ export default function ProductDetails() {
   const [notification, setNotification] = useState({ show: false, message: '' });
   const { name } = useParams();
   const { t } = useTranslation();
+
+  const [isFirstRender, setIsFirstRender] = useState(true);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -36,6 +40,42 @@ export default function ProductDetails() {
   
     fetchProduct();
   }, [name]);
+
+  useEffect(() => {
+
+    const fetchProduct = async () => {
+      try {
+        
+        const language = i18n.language; // Get the current language
+        const res = await fetch(`/locales/Products_${language == "en" ? "fr" : "en"}.json`);
+        const data = await res.json();
+        
+        const foundProduct = data.products.find(
+          (item) => item.name.toLowerCase().replace(/\s+/g, '-') === name
+        ).id;
+
+        const resAnother = await fetch(`/locales/Products_${language}.json`);
+        const dataAnother = await resAnother.json();
+
+        const foundProductAnother = dataAnother.products.find(
+          (item) => item.id === foundProduct
+        ).name;
+        
+        navigate("/produits/" + foundProductAnother.toLowerCase().replace(/\s+/g, '-'))
+  
+        // setProduct(foundProduct);
+      } catch (error) {
+        console.error('Error fetching product details:', error);
+      }
+    };
+  
+    if (isFirstRender) {
+      setIsFirstRender(false);
+    } else {
+      fetchProduct();
+    }
+
+  }, [i18n.language])
   
   // Function to add items to the cart in localStorage
   const addToCart = (product) => {
