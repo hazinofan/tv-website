@@ -94,6 +94,23 @@ export default function Blog() {
                     </div>
                 </div>
             </section>
+
+
+            {/* Internal SEO Links */}
+                <div className="internal-links my-10 hidden">
+                    <p>Discover more on our <Link to="/blog">IPTV Blog</Link>, where we share insights and updates about the latest in IPTV technology.</p>
+                    <p>Learn about the variety of <Link to="/produits">IPTV packages</Link> we offer, tailored to fit every customer’s needs.</p>
+                    <p>Need assistance? Visit our <Link to="/contact">contact page</Link> for support or inquiries.</p>
+                </div>
+                
+                {/* External SEO Links */}
+                <div className="external-links my-10 hidden">
+                    <p>Stay informed with the latest IPTV news at <a href="https://www.guru99.com/best-iptv-services.html" target="_blank" rel="noopener noreferrer">IPTV News</a>.</p>
+                    <p>Find out more about how <a href="https://www.paypal.com" target="_blank" rel="noopener noreferrer">PayPal</a> secures your online payments.</p>
+                    <p>Find out more about how <a href="https://fr.wikipedia.org/wiki/T%C3%A9l%C3%A9vision_IP" target="_blank" rel="noopener noreferrer">PayPal</a> secures your online payments.</p>
+                </div>
+
+                
         </div>
         </>
     );

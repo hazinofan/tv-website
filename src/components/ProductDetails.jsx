@@ -18,7 +18,7 @@ export default function ProductDetails() {
 
   const [isFirstRender, setIsFirstRender] = useState(true);
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchProduct = async () => {
