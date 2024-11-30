@@ -57,7 +57,7 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <Link to={i18n.language === 'en' ? '/produits/standard-subscription-1-month' : '/produits/abonnement-standard-3-mois'}>
+                                    <Link to={i18n.language === 'en' ? '/produits/standard-iptv-subscription-1-month' : '/produits/abonnement-iptv-standard-1-mois'}>
                                         <div data-tooltip={i18n.language === 'en' ? "Price: -4€" : "Prix: -4€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
@@ -99,7 +99,7 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <Link to={i18n.language === 'en' ? '/produits/standard-subscription-3-months' : '/produits/abonnement-standard-3-mois'}>
+                                    <Link to={i18n.language === 'en' ? '/produits/standard-iptv-subscription-3-month' : '/produits/abonnement-iptv-standard-3-mois'}>
                                         <div data-tooltip={i18n.language === 'en' ? "Price: -4€" : "Prix: -4€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
@@ -140,7 +140,7 @@ export default function PricingCards() {
                                     
                                     {/* button buy  */}
 
-                                    <Link to={i18n.language === 'en' ? '/produits/standard-subscription-6-months' : '/produits/abonnement-standard-6-mois'}>
+                                    <Link to={i18n.language === 'en' ? '/produits/standard-iptv-subscription-6-month' : '/produits/abonnement-iptv-standard-6-mois'}>
                                         <div data-tooltip={i18n.language === 'en' ? "Price: -5€" : "Prix: -5€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
@@ -184,7 +184,7 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <Link to={i18n.language === 'en' ? '/produits/standard-subscription-12-months' : '/produits/abonnement-standard-12-mois'}>
+                                    <Link to={i18n.language === 'en' ? '/produits/standard-iptv-subscription-12-month' : '/produits/abonnement-iptv-standard-12-mois'}>
                                         <div data-tooltip={i18n.language === 'en' ? "Price: -10€" : "Prix: -10€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
@@ -230,7 +230,7 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <Link to={i18n.language === 'en' ? '/produits/premium-subscription-1-month' : '/produits/abonnement-premium-1-mois'}>
+                                    <Link to={i18n.language === 'en' ? '/produits/premium-iptv-subscription-1-months' : '/produits/abonnement-iptv-premium-1-mois'}>
                                         <div data-tooltip={i18n.language === 'en' ? "Price: -5€" : "Prix: -5€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
@@ -272,7 +272,7 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <Link to={i18n.language === 'en' ? '/produits/premium-subscription-3-months' : '/produits/abonnement-premium-3-mois'}>
+                                    <Link to={i18n.language === 'en' ? '/produits/premium-iptv-subscription-3-months' : '/produits/abonnement-iptv-premium-3-mois'}>
                                         <div data-tooltip={i18n.language === 'en' ? "Price: -4€" : "Prix: -4€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
@@ -313,7 +313,7 @@ export default function PricingCards() {
                                     
                                     {/* button buy  */}
 
-                                    <Link to={i18n.language === 'en' ? '/produits/premium-subscription-6-months' : '/produits/abonnement-premium-6-mois'}>
+                                    <Link to={i18n.language === 'en' ? '/produits/premium-iptv-subscription-6-months' : '/produits/abonnement-iptv-premium-6-mois'}>
                                         <div data-tooltip={i18n.language === 'en' ? "Price: -7€" : "Prix: -7€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>
@@ -357,7 +357,7 @@ export default function PricingCards() {
 
                                     {/* button buy  */}
 
-                                    <Link to={i18n.language === 'en' ? '/produits/premium-subscription-12-months' : '/produits/abonnement-premium-12-mois'}>
+                                    <Link to={i18n.language === 'en' ? '/produits/premium-iptv-subscription-12-months' : '/produits/abonnement-iptv-premium-12-mois'}>
                                         <div data-tooltip={i18n.language === 'en' ? "Price: -10€" : "Prix: -10€"} className="button">
                                         <div className="button-wrapper">
                                         <button className="text">COMMANDER</button>

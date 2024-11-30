@@ -73,7 +73,7 @@ export default function EliteCard() {
                   <span className="ml-3 text-xl font-medium text-gray-500 dark:text-gray-400">EUR</span>
                 </div>
                 <div className="mt-6">
-                  <Link to={i18n.language === 'en' ? '/produits/platinium-12-month-subscription' : '/produits/abonnement-platinium-12-mois'} className="btn_elite inline-block py-2 px-4 bg-purple-600 text-white font-semibold rounded pt-3 hover:bg-purple-700 focus:ring-2 focus:ring-purple-500">
+                  <Link to={i18n.language === 'en' ? '/produits/platinium-15-month-iptv-subscription' : '/produits/abonnement-iptv-platinium-15-mois'} className="btn_elite inline-block py-2 px-4 bg-purple-600 text-white font-semibold rounded pt-3 hover:bg-purple-700 focus:ring-2 focus:ring-purple-500">
                     {t('eliteCard.orderButton')} {/* Use translation key */}
                   </Link>
                 </div>

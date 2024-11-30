@@ -5,12 +5,13 @@ import CountUp from 'react-countup';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next'; // Import useTranslation
 import 'aos/dist/aos.css'; // Import AOS styles
-import AOS from 'aos'; // Import AOS
+import AOS from 'aos';
 
 export default function HeroSection() {
-  const { t } = useTranslation(); // Initialize translation hook
+  const { t, i18n } = useTranslation(); // Initialize translation hook
   const [isVisible, setIsVisible] = useState(false);
   const statsRef = useRef(null);
+  
 
   useEffect(() => {
     AOS.init();
@@ -46,7 +47,7 @@ export default function HeroSection() {
         <div className="hero-text">
           <h1>{t('hero.title')}</h1> {/* Use translation for title */}
           <p>{t('hero.description')}</p> {/* Use translation for description */}
-          <Link to='/produits/abonnement-platinium-12-mois' className="discover-btn">{t('hero.discover')}</Link> {/* Use translation for button */}
+          <Link to={i18n.language === 'en' ? '/produits/premium-iptv-subscription-12-months' : '/produits/abonnement-iptv-premium-12-mois'} className="discover-btn">{t('hero.discover')}</Link> {/* Use translation for button */}
         </div>
         <div className="hero-image">
           <img src={product} alt="IPTV Box" />
