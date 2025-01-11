@@ -31,13 +31,13 @@ export const trackPageVisit = async (page) => {
     const visitStartTime = localStorage.getItem("visitStartTime");
     visitData.timeSpent = (Date.now() - visitStartTime) / 1000; 
 
-    await axios.post("http://localhost:5000/api/track", visitData);
+    await axios.post("https://platinium-backend.onrender.com/api/track", visitData);
   });
 };
 
 // Track button clicks
 export const trackButtonClick = async (buttonId) => {
-  await axios.post("http://localhost:5000/api/button-click", { buttonId });
+  await axios.post("https://platinium-backend.onrender.com/api/button-click", { buttonId });
 };
 
 // Track mouse clicks (heatmap tracking)
@@ -45,7 +45,7 @@ export const trackMouseClick = async (page, x, y) => {
   if (page === "/admin/login" || page === "/admin/dashboard") return; // Skip admin pages
 
   const userId = localStorage.getItem("userId") || `guest_${Date.now()}`;
-  await axios.post("http://localhost:5000/api/click", { userId, page, x, y });
+  await axios.post("https://platinium-backend.onrender.com/api/click", { userId, page, x, y });
 };
 
 // Track scroll depth
@@ -59,6 +59,6 @@ export const trackScrollDepth = async (page) => {
   });
 
   window.addEventListener("beforeunload", async () => {
-    await axios.post("http://localhost:5000/api/scroll", { userId, page, scrollPercentage: maxScroll });
+    await axios.post("https://platinium-backend.onrender.com/api/scroll", { userId, page, scrollPercentage: maxScroll });
   });
 };

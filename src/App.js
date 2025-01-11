@@ -28,7 +28,7 @@ const trackVisit = async (page) => {
     const response = await fetch("https://api64.ipify.org?format=json");
     const { ip } = await response.json();
 
-    await axios.post("http://localhost:5000/api/track", {
+    await axios.post("https://platinium-backend.onrender.com/api/track", {
       ip,
       userId: localStorage.getItem("userId") || "guest",
       referrer: document.referrer,
@@ -53,7 +53,7 @@ const usePageTracking = () => {
       const endTime = Date.now();
       const timeSpent = Math.floor((endTime - startTime) / 1000);
 
-      axios.post("http://localhost:5000/api/track", {
+      axios.post("https://platinium-backend.onrender.com/api/track", {
         ip: localStorage.getItem("userIp"),
         userId: localStorage.getItem("userId") || "guest",
         page: location.pathname,
@@ -73,7 +73,7 @@ const ProtectedRoute = ({ children }) => {
 function App() {
   useEffect(() => {
     const handleClick = (event) => {
-      axios.post("http://localhost:5000/api/click", {
+      axios.post("https://platinium-backend.onrender.com/api/click", {
         userId: localStorage.getItem("userId") || "guest",
         page: window.location.pathname,
         x: event.clientX,
@@ -92,7 +92,7 @@ function App() {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = (scrollTop / docHeight) * 100;
   
-      axios.post("http://localhost:5000/api/scroll", {
+      axios.post("https://platinium-backend.onrender.com/api/scroll", {
         userId: localStorage.getItem("userId") || "guest",
         page: window.location.pathname,
         scrollPercentage: scrollPercent,

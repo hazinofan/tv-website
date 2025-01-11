@@ -25,7 +25,7 @@ const AdminDashboard = () => {
   const [totalCountries, setTotalCountries] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/analytics").then((response) => {
+    axios.get("https://platinium-backend.onrender.com/api/analytics").then((response) => {
       const groupedData = response.data.reduce((acc, visit) => {
         const date = visit.timestamp.split("T")[0];
         acc[date] = (acc[date] || 0) + 1;
@@ -40,7 +40,7 @@ const AdminDashboard = () => {
       setVisits(chartData);
     });
 
-    axios.get("http://localhost:5000/api/clicks")
+    axios.get("https://platinium-backend.onrender.com/api/clicks")
       .then(response => {
         const groupedData = response.data.clicksPerDay.reduce((acc, entry) => {
           const date = entry._id.date;
@@ -57,7 +57,7 @@ const AdminDashboard = () => {
       })
       .catch(error => console.error("Error fetching click data:", error));
 
-    axios.get("http://localhost:5000/api/button-clicks").then((response) => {
+    axios.get("https://platinium-backend.onrender.com/api/button-clicks").then((response) => {
       const groupedData = response.data.reduce((acc, click) => {
         if (!click.buttonId) return acc;
         acc[click.buttonId] = (acc[click.buttonId] || 0) + click.clicks;
@@ -73,13 +73,13 @@ const AdminDashboard = () => {
     });
 
     axios
-      .get("http://localhost:5000/api/referrers")
+      .get("https://platinium-backend.onrender.com/api/referrers")
       .then((response) => setReferrals(response.data))
       .catch((error) => console.error("Error fetching referrals:", error));
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/visitor-countries")
+    axios.get("https://platinium-backend.onrender.com/api/visitor-countries")
       .then(response => {
         const groupedData = response.data.countriesPerDay.reduce((acc, entry) => {
           const date = entry._id.date;

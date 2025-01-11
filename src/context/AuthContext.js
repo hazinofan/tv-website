@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://platinium-backend.onrender.com/api/auth/login",
         { email, password },
         { withCredentials: true }
       );
@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
 
   // Function to handle admin logout
   const logout = async () => {
-    await axios.post("http://localhost:5000/api/auth/logout", {}, { withCredentials: true });
+    await axios.post("https://platinium-backend.onrender.com/api/auth/logout", {}, { withCredentials: true });
     setAdmin(null);
     localStorage.removeItem("admin_token");
   };

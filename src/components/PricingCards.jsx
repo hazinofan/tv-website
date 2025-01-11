@@ -13,7 +13,7 @@ export default function PricingCards() {
   const { t, i18n } = useTranslation();
 
   const trackButtonClick = async (buttonId) => {
-    await axios.post("http://localhost:5000/api/button-click", { buttonId });
+    await axios.post("https://platinium-backend.onrender.com/api/button-click", { buttonId });
   };
   
 
