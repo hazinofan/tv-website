@@ -16,9 +16,15 @@ import AOS from 'aos'; // Import AOS
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next'; // Import useTranslation
 import logo from '../assets/logo2.png'
+import { trackPageVisit, trackMouseClick, trackButtonClick, trackScrollDepth } from "../utils/trackingService";
 
 export default function Home() {
-  const { t } = useTranslation(); // Initialize translation hook
+  const { t } = useTranslation(); 
+
+  useEffect(() => {
+    trackPageVisit("/home");   // ✅ Track Home Page Visit
+    trackScrollDepth("/home"); // ✅ Track Scroll Depth
+  }, []);
 
   useEffect(() => {
     AOS.init();
@@ -43,7 +49,12 @@ export default function Home() {
         />
       </Helmet>
 
-      <div className="home" data-aos="fade-down" data-aos-delay="400">
+      <div 
+        className="home" 
+        data-aos="fade-down" 
+        data-aos-delay="400" 
+        onClick={(e) => trackMouseClick("/home", e.clientX, e.clientY)} // ✅ Corrected Mouse Click Tracking
+      >
         <div className="banner_container">
           <div className="overlay"></div>
           <div className="content">
@@ -59,13 +70,19 @@ export default function Home() {
             
             <div className="buttons flex flex-col sm:flex-row gap-4 justify-center pt-6 text-white">
               <Link to="/produits">
-                <button className="btn flex items-center justify-center gap-2 text-white">
+                <button 
+                  onClick={() => trackButtonClick("order-now")}  // ✅ Unique ID for "Order Now"
+                  className="btn flex items-center justify-center gap-2 text-white"
+                >
                   <FaShoppingCart className="text-white" /> 
                   {t('home.orderNow')}
                 </button>
               </Link>
               <Link to="/test-gratuit">
-                <button className="btn flex items-center justify-center gap-2">
+                <button 
+                  onClick={() => trackButtonClick("free-test")}  // ✅ Unique ID for "Free Test"
+                  className="btn flex items-center justify-center gap-2"
+                >
                   <FaLaptop className="text-white" /> 
                   {t('home.freeTest')} 
                 </button>

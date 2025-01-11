@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaLock } from 'react-icons/fa';
 import './checkout.css'
@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Helmet } from 'react-helmet';
+import { trackPageVisit, trackMouseClick, trackButtonClick, trackScrollDepth } from "../utils/trackingService"; // ✅ Import tracking functions
 
 export default function Checkout() {
   const { t } = useTranslation();
@@ -22,10 +23,17 @@ export default function Checkout() {
     cartItems = []; // Fallback to an empty array in case of an error
   }
 
+  useEffect(() => {
+    trackPageVisit("/checkout");   // ✅ Track Page Visit
+    trackScrollDepth("/checkout"); // ✅ Track Scroll Depth
+  }, []);
+
   const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   const handleOrderSubmit = (event) => {
     event.preventDefault();
+
+    trackButtonClick("checkout-submit");
 
     const customerInfo = {
       name: event.target.full_name.value,  // Access 'full_name' instead of 'name'
@@ -86,7 +94,7 @@ export default function Checkout() {
         <meta name="keywords" content="Commande, Abonnement IPTV, Paiement Sécurisé, Achat en Ligne" />
         <link rel="canonical" href="https://platinium-iptv.com/checkout" />
       </Helmet>
-    <div className="relative mx-auto w-full bg-cover bg-center" style={{ backgroundImage: `url(${bgg})` }}>
+    <div className="relative mx-auto w-full bg-cover bg-center" onClick={(e) => trackMouseClick("/checkout", e.clientX, e.clientY)} style={{ backgroundImage: `url(${bgg})` }}>
       <div className="absolute inset-0 bg-black opacity-15 z-0"></div>
       
       <div className="grid min-h-screen grid-cols-10 relative z-10">

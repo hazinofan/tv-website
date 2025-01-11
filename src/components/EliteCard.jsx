@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'; // Import useTranslation
 import '../index.css';
 import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos'; // Import AOS
+import axios from 'axios';
 
 export default function EliteCard() {
   const { t, i18n } = useTranslation(); // Initialize translation
@@ -11,6 +12,11 @@ export default function EliteCard() {
   useEffect(() => {
     AOS.init();
   }, []);
+
+  const trackButtonClick = async (buttonId) => {
+    await axios.post("http://localhost:5000/api/button-click", { buttonId });
+  };
+  
 
   return (
     <div>
@@ -33,7 +39,7 @@ export default function EliteCard() {
                     </h4>
                     <div className="flex-1 border-t-2 border-gray-200 dark:border-gray-600"></div>
                   </div>
-                  <ul role="list" className="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5">
+                  <ul className="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5">
                     <li className="flex items-start lg:col-span-1">
                       <div className="flex-shrink-0">
                         <svg className="h-5 w-5 text-green-400 dark:text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -73,8 +79,8 @@ export default function EliteCard() {
                   <span className="ml-3 text-xl font-medium text-gray-500 dark:text-gray-400">EUR</span>
                 </div>
                 <div className="mt-6">
-                  <Link to={i18n.language === 'en' ? '/produits/platinium-15-month-iptv-subscription' : '/produits/abonnement-iptv-platinium-15-mois'} className="btn_elite inline-block py-2 px-4 bg-purple-600 text-white font-semibold rounded pt-3 hover:bg-purple-700 focus:ring-2 focus:ring-purple-500">
-                    {t('eliteCard.orderButton')} {/* Use translation key */}
+                  <Link onClick={() => trackButtonClick("elite_home")} to={i18n.language === 'en' ? '/produits/platinium-15-month-iptv-subscription' : '/produits/abonnement-iptv-platinium-15-mois'} className="btn_elite inline-block py-2 px-4 bg-purple-600 text-white font-semibold rounded pt-3 hover:bg-purple-700 focus:ring-2 focus:ring-purple-500">
+                     {t('eliteCard.orderButton')} 
                   </Link>
                 </div>
               </div>

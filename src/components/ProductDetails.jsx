@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import productImage from '../assets/product.png'; // Renamed for clarity
 import '../index.css';
 import { FaCheckCircle } from 'react-icons/fa';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Notification from './Notification';
 import { Helmet } from 'react-helmet';
+import { trackPageVisit, trackMouseClick, trackButtonClick, trackScrollDepth } from "../utils/trackingService"; // ✅ Import tracking functions
+
 
 export default function ProductDetails() {
   const [activeTab, setActiveTab] = useState('details');
   const { i18n } = useTranslation(); // Destructure i18n to detect language
   const [product, setProduct] = useState(null);
-  const [error, setError] = useState(null);
   const [notification, setNotification] = useState({ show: false, message: '' });
   const { name } = useParams();
   const { t } = useTranslation();
@@ -19,6 +19,11 @@ export default function ProductDetails() {
   const [isFirstRender, setIsFirstRender] = useState(true);
 
   const navigate = useNavigate()
+
+  useEffect(() => {
+    trackPageVisit(`/product-details/${name}`);   // ✅ Track Page Visit
+    trackScrollDepth(`/product-details/${name}`); // ✅ Track Scroll Depth
+  }, [name]);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -79,6 +84,7 @@ export default function ProductDetails() {
   
   // Function to add items to the cart in localStorage
   const addToCart = (product) => {
+    trackButtonClick(`add-to-cart-${product.name}`);
     const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     const existingItem = cartItems.find(item => item.id === product.id);
   
@@ -117,7 +123,7 @@ export default function ProductDetails() {
       </Helmet>
 
 
-    <div>
+    <div className="product-details-container" onClick={(e) => trackMouseClick(`/product-details/${name}`, e.clientX, e.clientY)} >
       <h1 className='text-5xl text-center pt-32' style={{ fontFamily: "fantasy" }}>{t('products.title')}</h1>
       <div className=" mt-10 ml-10">
         <Link to='/produits' style={{justifyContent: 'flex-start'}}>
