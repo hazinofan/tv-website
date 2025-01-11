@@ -21,52 +21,18 @@ import "./i18n";
 import { AuthContext, AuthProvider } from "./context/AuthContext";
 import AdminDashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
-
-// Function to track user visits
-const trackVisit = async (page) => {
-  try {
-    const response = await fetch("https://api64.ipify.org?format=json");
-    const { ip } = await response.json();
-
-    await axios.post("https://platinium-backend.onrender.com/api/track", {
-      ip,
-      userId: localStorage.getItem("userId") || "guest",
-      referrer: document.referrer,
-      page,
-      timeSpent: 0, // Will be updated when user leaves
-    });
-  } catch (error) {
-    console.error("Error tracking visit:", error);
-  }
-};
-
-
-// Function to track time spent
-const usePageTracking = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    const startTime = Date.now();
-    trackVisit(location.pathname);
-
-    return () => {
-      const endTime = Date.now();
-      const timeSpent = Math.floor((endTime - startTime) / 1000);
-
-      axios.post("https://platinium-backend.onrender.com/api/track", {
-        ip: localStorage.getItem("userIp"),
-        userId: localStorage.getItem("userId") || "guest",
-        page: location.pathname,
-        timeSpent,
-      });
-    };
-  }, [location]);
-};
+import Reports from "./pages/Reports"; // Import the Reports page
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
   const { admin } = useContext(AuthContext);
-  return admin ? children : <Navigate to="/admin/login" />;
+  const storedToken = localStorage.getItem("adminToken");
+
+  if (admin === null && !storedToken) {
+    return <Navigate to="/admin/login" />;
+  }
+
+  return children;
 };
 
 // Track Mouse Clicks for Heatmaps
@@ -80,7 +46,7 @@ function App() {
         y: event.clientY,
       });
     };
-  
+
     window.addEventListener("click", handleClick);
     return () => window.removeEventListener("click", handleClick);
   }, []);
@@ -91,18 +57,18 @@ function App() {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = (scrollTop / docHeight) * 100;
-  
+
       axios.post("https://platinium-backend.onrender.com/api/scroll", {
         userId: localStorage.getItem("userId") || "guest",
         page: window.location.pathname,
         scrollPercentage: scrollPercent,
       });
     };
-  
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
+
   return (
     <AuthProvider>
       <Router>
@@ -128,6 +94,7 @@ function App() {
           {/* Admin Routes */}
           <Route path="/admin/login" element={<Admin />} />
           <Route path="/admin/dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+          <Route path="/admin/reports" element={<ProtectedRoute><Reports /></ProtectedRoute>} />
         </Routes>
       </Router>
     </AuthProvider>

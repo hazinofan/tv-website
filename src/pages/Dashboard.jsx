@@ -14,6 +14,7 @@ import {
   Cell,
 } from "recharts";
 import "../pages/products.css"; // Import CSS styles
+import { Link } from "react-router-dom";
 
 const AdminDashboard = () => {
   const [visits, setVisits] = useState([]);
@@ -23,54 +24,60 @@ const AdminDashboard = () => {
   const [referrals, setReferrals] = useState([]);
   const [countriesPerDay, setCountriesPerDay] = useState({});
   const [totalCountries, setTotalCountries] = useState([]);
-
+  const [reportData, setReportData] = useState(null);
+  const [downloadLink, setDownloadLink] = useState("");
   useEffect(() => {
-    axios.get("https://platinium-backend.onrender.com/api/analytics").then((response) => {
-      const groupedData = response.data.reduce((acc, visit) => {
-        const date = visit.timestamp.split("T")[0];
-        acc[date] = (acc[date] || 0) + 1;
-        return acc;
-      }, {});
+    axios
+      .get("https://platinium-backend.onrender.com/api/analytics")
+      .then((response) => {
+        const groupedData = response.data.reduce((acc, visit) => {
+          const date = visit.timestamp.split("T")[0];
+          acc[date] = (acc[date] || 0) + 1;
+          return acc;
+        }, {});
 
-      const chartData = Object.keys(groupedData).map((date) => ({
-        date,
-        visits: groupedData[date],
-      }));
+        const chartData = Object.keys(groupedData).map((date) => ({
+          date,
+          visits: groupedData[date],
+        }));
 
-      setVisits(chartData);
-    });
+        setVisits(chartData);
+      });
 
-    axios.get("https://platinium-backend.onrender.com/api/clicks")
-      .then(response => {
+    axios
+      .get("https://platinium-backend.onrender.com/api/clicks")
+      .then((response) => {
         const groupedData = response.data.clicksPerDay.reduce((acc, entry) => {
           const date = entry._id.date;
           const page = entry._id.page;
-          
+
           acc[date] = acc[date] || [];
           acc[date].push({ page, count: entry.count });
-          
+
           return acc;
         }, {});
 
         setClicksPerDay(groupedData);
         setTotalClicks(response.data.totalClicks);
       })
-      .catch(error => console.error("Error fetching click data:", error));
+      .catch((error) => console.error("Error fetching click data:", error));
 
-    axios.get("https://platinium-backend.onrender.com/api/button-clicks").then((response) => {
-      const groupedData = response.data.reduce((acc, click) => {
-        if (!click.buttonId) return acc;
-        acc[click.buttonId] = (acc[click.buttonId] || 0) + click.clicks;
-        return acc;
-      }, {});
+    axios
+      .get("https://platinium-backend.onrender.com/api/button-clicks")
+      .then((response) => {
+        const groupedData = response.data.reduce((acc, click) => {
+          if (!click.buttonId) return acc;
+          acc[click.buttonId] = (acc[click.buttonId] || 0) + click.clicks;
+          return acc;
+        }, {});
 
-      const chartData = Object.keys(groupedData).map((buttonId) => ({
-        buttonName: buttonId,
-        clicks: groupedData[buttonId],
-      }));
+        const chartData = Object.keys(groupedData).map((buttonId) => ({
+          buttonName: buttonId,
+          clicks: groupedData[buttonId],
+        }));
 
-      setButtonClicks(chartData);
-    });
+        setButtonClicks(chartData);
+      });
 
     axios
       .get("https://platinium-backend.onrender.com/api/referrers")
@@ -79,22 +86,36 @@ const AdminDashboard = () => {
   }, []);
 
   useEffect(() => {
-    axios.get("https://platinium-backend.onrender.com/api/visitor-countries")
-      .then(response => {
-        const groupedData = response.data.countriesPerDay.reduce((acc, entry) => {
-          const date = entry._id.date;
-          const country = entry._id.country || "Unknown";
-          
-          acc[date] = acc[date] || [];
-          acc[date].push({ country, count: entry.count });
-          
-          return acc;
-        }, {});
+    axios
+      .get("https://platinium-backend.onrender.com/api/visitor-countries")
+      .then((response) => {
+        const groupedData = response.data.countriesPerDay.reduce(
+          (acc, entry) => {
+            const date = entry._id.date;
+            const country = entry._id.country || "Unknown";
+
+            acc[date] = acc[date] || [];
+            acc[date].push({ country, count: entry.count });
+
+            return acc;
+          },
+          {}
+        );
 
         setCountriesPerDay(groupedData);
         setTotalCountries(response.data.totalCountries);
       })
-      .catch(error => console.error("Error fetching country data:", error));
+      .catch((error) => console.error("Error fetching country data:", error));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("https://platinium-backend.onrender.com/api/daily-report")
+      .then((response) => {
+        setReportData(response.data.reportData);
+        setDownloadLink(response.data.downloadLink);
+      })
+      .catch((error) => console.error("Error fetching daily report:", error));
   }, []);
 
   return (
@@ -206,7 +227,12 @@ const AdminDashboard = () => {
                   label
                 >
                   {countriesPerDay[date].map((entry, idx) => (
-                    <Cell key={`cell-${idx}`} fill={["#0088FE", "#00C49F", "#FFBB28", "#FF8042"][idx % 4]} />
+                    <Cell
+                      key={`cell-${idx}`}
+                      fill={
+                        ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"][idx % 4]
+                      }
+                    />
                   ))}
                 </Pie>
                 <Tooltip />
@@ -235,6 +261,10 @@ const AdminDashboard = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      {/* Daily Report Section */}
+      <div className="report-container">
+        <Link to='/admin/reports'> go to reports page </Link>
       </div>
     </div>
   );
