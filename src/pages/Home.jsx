@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet'; // Import Helmet
 import '../index.css';  
 import { FaLaptop, FaShoppingCart } from 'react-icons/fa';
@@ -30,6 +30,48 @@ export default function Home() {
     AOS.init();
   }, []);
 
+  // ✅ Promo Popup Component
+  const PromoPopup = () => {
+    const [showPopup, setShowPopup] = useState(false);
+  
+    useEffect(() => {
+      const hasSeenPopup = localStorage.getItem("hasSeenPopup");
+      if (!hasSeenPopup) {
+        setShowPopup(true);
+      }
+    }, []);
+  
+    const handleClose = () => {
+      localStorage.setItem("hasSeenPopup", "true");
+      setShowPopup(false);
+    };
+
+    return (
+      showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-purple-200  text-white rounded-lg shadow-lg p-6 max-w-md mx-auto text-center space-y-4">
+            <h2 className="text-3xl font-bold">🔥 Offre Spéciale ! 🔥</h2>
+            <p className="text-lg leading-relaxed text-black">
+              Profitez de notre fonctionnalité qui permet de regarder sur <span className="font-semibold">2 à 3 appareils en même temps</span> ! 
+              En plus, nous offrons une <span className="font-semibold">réduction de 10 %</span> sur votre première commande.
+            </p>
+            <p className="text-lg leading-relaxed text-black">
+              Nous avons également des chaînes qui diffuseront les <span className="font-semibold">finales de la Kings League</span> et le prochain tournoi. 
+              Ne manquez pas cette occasion !
+            </p>
+            <button
+              onClick={handleClose}
+              className="bg-white text-purple-600 font-bold py-2 px-4 rounded hover:bg-purple-700 hover:text-white transition duration-200"
+            >
+              Fermer
+            </button>
+          </div>
+        </div>
+      )
+    );
+    
+  };
+
   return (
     <>
       <Helmet>
@@ -48,6 +90,17 @@ export default function Home() {
           content="PLATINIUM IPTV, iptv smarters pro, abonnement iptv, iptv smarters, smart iptv"
         />
       </Helmet>
+
+      {/* ✅ Fixed Discount Bar */}
+      <div 
+        style={styles.discountBar} 
+        className="bg-purple-600 bg-opacity-70 backdrop-blur-md text-white uppercase"
+      >
+        🎉 2 abonnements achetés = 1 offert ! 🎉
+      </div>
+
+      {/* ✅ Promo Popup */}
+      <PromoPopup />
 
       <div 
         className="home" 
@@ -93,26 +146,9 @@ export default function Home() {
       </div>
 
       <Caroussel />
-
-      {/* Internal SEO Links */}
-      <div className="internal-links my-10 hidden">
-        <p>Discover more on our <Link to="/blog">IPTV Blog</Link>, where we share insights and updates about the latest in IPTV technology.</p>
-        <p>Learn about the variety of <Link to="/produits">IPTV packages</Link> we offer, tailored to fit every customer’s needs.</p>
-        <p>Need assistance? Visit our <Link to="/contact">contact page</Link> for support or inquiries.</p>
-      </div>
-
       <Integration />
       <HeroSection />
-      
       <CarousselMovies />
-      
-      {/* External SEO Links */}
-      <div className="external-links my-10 hidden">
-        <p>Stay informed with the latest IPTV news at <a href="https://www.guru99.com/best-iptv-services.html" target="_blank" rel="noopener noreferrer">IPTV News</a>.</p>
-        <p>Find out more about how <a href="https://www.paypal.com" target="_blank" rel="noopener noreferrer">PayPal</a> secures your online payments.</p>
-        <p>Find out more about how <a href="https://fr.wikipedia.org/wiki/T%C3%A9l%C3%A9vision_IP" target="_blank" rel="noopener noreferrer">PayPal</a> secures your online payments.</p>
-      </div>
-
       <PricingCards />
       <EliteCard />
       <Steps />
@@ -120,3 +156,48 @@ export default function Home() {
     </>
   );
 }
+
+// ✅ Styles for Popup & Discount Bar
+const styles = {
+  overlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0,0,0,0.5)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 1000,
+  },
+  popup: {
+    background: "white",
+    padding: "20px",
+    borderRadius: "10px",
+    textAlign: "center",
+    boxShadow: "0px 0px 10px rgba(0,0,0,0.2)",
+  },
+  closeButton: {
+    marginTop: "10px",
+    padding: "8px 16px",
+    background: "#ff0000",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
+  discountBar: {
+    position: "fixed",
+    top: 0,
+    width: "100%",
+    height:"25px",
+    color: "white",
+    textAlign: "center",
+    padding: "1px 0",
+    fontSize: "16px",
+    fontWeight: "bold",
+    zIndex: 1000,
+
+  }
+};

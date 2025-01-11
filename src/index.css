@@ -828,3 +828,7 @@ a.button {
   font-size: 18px;
   transition: all 0.3s ease-in;
  }
+
+ .fixed.top-5.left-5.z-50 {
+  top: 35px;
+}

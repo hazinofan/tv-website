@@ -264,7 +264,7 @@ const AdminDashboard = () => {
       </div>
       {/* Daily Report Section */}
       <div className="report-container">
-        <Link to='/admin/reports'> go to reports page </Link>
+        <Link className="text-black text-2xl hover:text-gray-800 hover:underline" to='/admin/reports'> go to Daily reports page </Link>
       </div>
     </div>
   );
