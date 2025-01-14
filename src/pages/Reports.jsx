@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import AdminNavbar from "../components/AdminNavbar";
 
 const Reports = () => {
   const [reports, setReports] = useState([]);
@@ -12,7 +13,8 @@ const Reports = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg p-6">
+      <AdminNavbar />
+      <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg p-6 mt-10">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Daily Reports</h2>
         
         <div className="overflow-x-auto">

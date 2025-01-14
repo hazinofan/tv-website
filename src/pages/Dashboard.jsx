@@ -15,6 +15,7 @@ import {
 } from "recharts";
 import "../pages/products.css"; // Import CSS styles
 import { Link } from "react-router-dom";
+import AdminNavbar from "../components/AdminNavbar";
 
 const AdminDashboard = () => {
   const [visits, setVisits] = useState([]);
@@ -120,7 +121,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="admin-dashboard">
-      <h2>Admin Dashboard</h2>
+      <AdminNavbar />
 
       {/* Website Visits Over Time (Line Chart) */}
       <div className="chart-container small-chart">

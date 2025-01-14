@@ -35,7 +35,43 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
-// Track Mouse Clicks for Heatmaps
+// Component to wrap Routes and conditionally show WhatsAppButton
+const AppRoutes = () => {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith("/admin");
+
+  return (
+    <>
+      <ScrollToTop />
+      {!isAdminRoute && (
+        <WhatsAppButton
+          phoneNumber="447453930081"
+          message="Hello, I would like to get more information about your services."
+        />
+      )}
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/produits" element={<Layout><Products /></Layout>} />
+        <Route path="/produits/:name" element={<Layout><ProductDetails /></Layout>} />
+        <Route path="/test-gratuit" element={<Layout><FreeTrial /></Layout>} />
+        <Route path="/blogs" element={<Layout><Blog /></Layout>} />
+        <Route path="/blogs/:id" element={<Layout><BlogPage /></Layout>} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/privacy-policy" element={<Layout><PrivacyPolicy /></Layout>} />
+        <Route path="/termes-et-conditions" element={<Layout><TermsAndConditions /></Layout>} />
+        <Route path="/thank-you" element={<ThankYouPage />} />
+
+        {/* Admin Routes */}
+        <Route path="/admin/login" element={<Admin />} />
+        <Route path="/admin/dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
+        <Route path="/admin/reports" element={<ProtectedRoute><Reports /></ProtectedRoute>} />
+      </Routes>
+    </>
+  );
+};
+
+// Main App Component
 function App() {
   useEffect(() => {
     const handleClick = (event) => {
@@ -51,7 +87,6 @@ function App() {
     return () => window.removeEventListener("click", handleClick);
   }, []);
 
-  // Track Scroll Depth
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -72,30 +107,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <ScrollToTop />
-        <WhatsAppButton
-          phoneNumber="447453930081"
-          message="Hello, I would like to get more information about your services."
-        />
-        <usePageTracking /> {/* Track page views and time spent */}
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={<Layout><Home /></Layout>} />
-          <Route path="/produits" element={<Layout><Products /></Layout>} />
-          <Route path="/produits/:name" element={<Layout><ProductDetails /></Layout>} />
-          <Route path="/test-gratuit" element={<Layout><FreeTrial /></Layout>} />
-          <Route path="/blogs" element={<Layout><Blog /></Layout>} />
-          <Route path="/blogs/:id" element={<Layout><BlogPage /></Layout>} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/privacy-policy" element={<Layout><PrivacyPolicy /></Layout>} />
-          <Route path="/termes-et-conditions" element={<Layout><TermsAndConditions /></Layout>} />
-          <Route path="/thank-you" element={<ThankYouPage />} />
-
-          {/* Admin Routes */}
-          <Route path="/admin/login" element={<Admin />} />
-          <Route path="/admin/dashboard" element={<ProtectedRoute><AdminDashboard /></ProtectedRoute>} />
-          <Route path="/admin/reports" element={<ProtectedRoute><Reports /></ProtectedRoute>} />
-        </Routes>
+        <AppRoutes />
       </Router>
     </AuthProvider>
   );
