@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoLogoWhatsapp } from 'react-icons/io5';
 
-const WhatsAppButton = ({ phoneNumber = "12763001517", message = "Bonjour! Je suis intéressé par le prix actuel de l’abonnement Elite. Pourriez-vous s'il vous plaît fournir les détails?" }) => {
+const WhatsAppButton = ({ phoneNumber = "14509907347", message = "Bonjour! Je suis intéressé par le prix actuel de l’abonnement Elite. Pourriez-vous s'il vous plaît fournir les détails?" }) => {
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 
